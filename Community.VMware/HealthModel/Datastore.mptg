@@ -1,0 +1,264 @@
+<TemplateGroup>
+  <Instances>
+    <Instance ID="Instance6f1763c196e84e549b619d16b5f8ff8f" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>Discovery.Datastore</Id>
+        <DisplayName>VMware Datastore Discovery</DisplayName>
+        <Description>PowerShell script that connects to vCenter to discover Datastores</Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;14400&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:20&lt;/SyncTime&gt;&lt;ScriptName&gt;Community.VMware.Discovery.Datastore.ps1&lt;/ScriptName&gt;&lt;ScriptBody&gt;$IncludeFileContent/Scripts/DatastoreDiscovery.ps1$&lt;/ScriptBody&gt;&lt;Parameters&gt;&lt;Parameter&gt;&lt;Name&gt;sourceID&lt;/Name&gt;&lt;Value&gt;$MPElement$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;managedEntityID&lt;/Name&gt;&lt;Value&gt;$Target/Id$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;vCenterServerName&lt;/Name&gt;&lt;Value&gt;$Target/Property[Type="Community.VMware.Class.vCenter"]/vCenterServerName$&lt;/Value&gt;&lt;/Parameter&gt;&lt;/Parameters&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Windows!Microsoft.Windows.TimedPowerShell.DiscoveryProvider</DataSourceType>
+        <Target>Community.VMware.Class.vCenter</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses>
+          <DiscoveryClassItem>
+            <TypeId>Community.VMware.Class.Datastore</TypeId>
+            <Properties />
+          </DiscoveryClassItem>
+        </DiscoveryClasses>
+        <DiscoveryRelationships>
+          <DiscoveryRelationshipItem>
+            <TypeId>Community.VMware.Relationship.vCenterHostsDatastore</TypeId>
+            <Properties />
+          </DiscoveryRelationshipItem>
+        </DiscoveryRelationships>
+      </DiscoveryConfig>
+    </Instance>
+    <Instance ID="Instance9be2ef2679894c9ca23d384bdd4c332d" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>CollectionRule.DatastoreSpaceCapacityGB</Id>
+        <DisplayName>VMware Datastore Space Capacity GB Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Datastore</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;DatastoreId&gt;$Target/Property[Type='Community.VMware.Class.Datastore']/DatastoreId$&lt;/DatastoreId&gt;&lt;DatastoreName&gt;$Target/Property[Type='Community.VMware.Class.Datastore']/DatastoreName$&lt;/DatastoreName&gt;&lt;CounterName&gt;Space Capacity GB&lt;/CounterName&gt;&lt;PerfValueName&gt;CAPACITY_GB&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.DatastorePerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instance30405032de0843dfb2843beda988eee9" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>CollectionRule.DatastoreSpaceFreePercent</Id>
+        <DisplayName>VMware Datastore Space Free Percent Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Datastore</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;DatastoreId&gt;$Target/Property[Type='Community.VMware.Class.Datastore']/DatastoreId$&lt;/DatastoreId&gt;&lt;DatastoreName&gt;$Target/Property[Type='Community.VMware.Class.Datastore']/DatastoreName$&lt;/DatastoreName&gt;&lt;CounterName&gt;Space Free Percent&lt;/CounterName&gt;&lt;PerfValueName&gt;FREE_Percent&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.DatastorePerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instancea26adef91bd04fddb3d900c69680d05a" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>CollectionRule.DatastoreSpaceFreeGB</Id>
+        <DisplayName>VMware Datastore Space Free GB Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Datastore</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;DatastoreId&gt;$Target/Property[Type='Community.VMware.Class.Datastore']/DatastoreId$&lt;/DatastoreId&gt;&lt;DatastoreName&gt;$Target/Property[Type='Community.VMware.Class.Datastore']/DatastoreName$&lt;/DatastoreName&gt;&lt;CounterName&gt;Space Free GB&lt;/CounterName&gt;&lt;PerfValueName&gt;FREE_GB&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.DatastorePerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instance07687355f7bb4c8baaf136e132a549d1" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>CollectionRule.DatastoreSpaceUsedPercent</Id>
+        <DisplayName>VMware Datastore Space Used Percent Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Datastore</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;DatastoreId&gt;$Target/Property[Type='Community.VMware.Class.Datastore']/DatastoreId$&lt;/DatastoreId&gt;&lt;DatastoreName&gt;$Target/Property[Type='Community.VMware.Class.Datastore']/DatastoreName$&lt;/DatastoreName&gt;&lt;CounterName&gt;Space Used Percent&lt;/CounterName&gt;&lt;PerfValueName&gt;USED_Percent&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.DatastorePerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instance0d6d8cd8957e41eeb67f0ded714ea4a6" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>CollectionRule.DatastoreSpaceUsedGB</Id>
+        <DisplayName>VMware Datastore Space Used GB Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Datastore</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;DatastoreId&gt;$Target/Property[Type='Community.VMware.Class.Datastore']/DatastoreId$&lt;/DatastoreId&gt;&lt;DatastoreName&gt;$Target/Property[Type='Community.VMware.Class.Datastore']/DatastoreName$&lt;/DatastoreName&gt;&lt;CounterName&gt;Space Used GB&lt;/CounterName&gt;&lt;PerfValueName&gt;USED_GB&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.DatastorePerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instance39dcfec7c1994eb59d07f3cdc9ddc062" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.UnitMonitor" Version="1.0.0.0">
+      <UnitMonitorConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <MonitorType>Community.VMware.MonitorType.DatastoreState</MonitorType>
+        <MonitorConfig>&lt;IntervalSeconds&gt;120&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;120&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;DatastoreId&gt;$Target/Property[Type='Community.VMware.Class.Datastore']/DatastoreId$&lt;/DatastoreId&gt;</MonitorConfig>
+        <MonitorOperationalStates>
+          <OperationalState>
+            <OperationalStateId>Available</OperationalStateId>
+            <OperationalStateDisplayName>Available</OperationalStateDisplayName>
+            <MonitorTypeStateId>Available</MonitorTypeStateId>
+            <HealthState>Success</HealthState>
+          </OperationalState>
+          <OperationalState>
+            <OperationalStateId>Unavailable</OperationalStateId>
+            <OperationalStateDisplayName>Unavailable</OperationalStateDisplayName>
+            <MonitorTypeStateId>Unavailable</MonitorTypeStateId>
+            <HealthState>Error</HealthState>
+          </OperationalState>
+        </MonitorOperationalStates>
+        <MonitorRunAs>Community.VMware.SecureReference.RunAsProfile</MonitorRunAs>
+        <ParentMonitor>Health!System.Health.AvailabilityState</ParentMonitor>
+        <Accessibility>Internal</Accessibility>
+        <Id>UnitMonitor.DatastoreState</Id>
+        <DisplayName>VMware Datastore State</DisplayName>
+        <Description />
+        <Target>Community.VMware.Class.Datastore</Target>
+        <Enabled>true</Enabled>
+        <Category>AvailabilityHealth</Category>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <AlertAutoResolve>true</AlertAutoResolve>
+        <AlertOnState>Error</AlertOnState>
+        <AlertPriority>Normal</AlertPriority>
+        <AlertSeverity>MatchMonitorHealth</AlertSeverity>
+        <AlertName>VMware Datastore State</AlertName>
+        <AlertDescription>The datastore's current state is $Data/Context/Property[@Name='State']$.</AlertDescription>
+        <ConfirmDelivery>false</ConfirmDelivery>
+      </UnitMonitorConfig>
+    </Instance>
+    <Instance ID="Instancede8dde6130e942209421852bab4117cc" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.UnitMonitor" Version="1.0.0.0">
+      <UnitMonitorConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <MonitorType>Community.VMware.MonitorType.DatastorePerfBelowThreshold</MonitorType>
+        <MonitorConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;DatastoreId&gt;$Target/Property[Type='Community.VMware.Class.Datastore']/DatastoreId$&lt;/DatastoreId&gt;&lt;DatastoreName&gt;$Target/Property[Type='Community.VMware.Class.Datastore']/DatastoreName$&lt;/DatastoreName&gt;&lt;CounterName&gt;Space Free Percent&lt;/CounterName&gt;&lt;PerfValueName&gt;FREE_Percent&lt;/PerfValueName&gt;&lt;WarningThreshold&gt;10&lt;/WarningThreshold&gt;&lt;CriticalThreshold&gt;2&lt;/CriticalThreshold&gt;&lt;NumSamples&gt;0&lt;/NumSamples&gt;</MonitorConfig>
+        <MonitorOperationalStates>
+          <OperationalState>
+            <OperationalStateId>Healthy</OperationalStateId>
+            <OperationalStateDisplayName>Healthy</OperationalStateDisplayName>
+            <MonitorTypeStateId>Healthy</MonitorTypeStateId>
+            <HealthState>Success</HealthState>
+          </OperationalState>
+          <OperationalState>
+            <OperationalStateId>Warning</OperationalStateId>
+            <OperationalStateDisplayName>Warning</OperationalStateDisplayName>
+            <MonitorTypeStateId>Warning</MonitorTypeStateId>
+            <HealthState>Warning</HealthState>
+          </OperationalState>
+          <OperationalState>
+            <OperationalStateId>Critical</OperationalStateId>
+            <OperationalStateDisplayName>Critical</OperationalStateDisplayName>
+            <MonitorTypeStateId>Critical</MonitorTypeStateId>
+            <HealthState>Error</HealthState>
+          </OperationalState>
+        </MonitorOperationalStates>
+        <MonitorRunAs>Community.VMware.SecureReference.RunAsProfile</MonitorRunAs>
+        <ParentMonitor>Health!System.Health.PerformanceState</ParentMonitor>
+        <Accessibility>Internal</Accessibility>
+        <Id>UnitMonitor.DatastoreSpaceFreePercent</Id>
+        <DisplayName>VMware Datastore Space Free Percent</DisplayName>
+        <Description />
+        <Target>Community.VMware.Class.Datastore</Target>
+        <Enabled>true</Enabled>
+        <Category>PerformanceHealth</Category>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <AlertAutoResolve>true</AlertAutoResolve>
+        <AlertOnState>Warning</AlertOnState>
+        <AlertPriority>Normal</AlertPriority>
+        <AlertSeverity>MatchMonitorHealth</AlertSeverity>
+        <AlertName>VMware Datastore Space Free Percent</AlertName>
+        <AlertDescription>The datastore space free percent of $Target/Property[Type="Community.VMware.Class.Datastore"]/DatastoreName$ is $Data/Context/SampleValue$.</AlertDescription>
+        <ConfirmDelivery>false</ConfirmDelivery>
+      </UnitMonitorConfig>
+    </Instance>
+    <Instance ID="Instance2d6945342e9649fe9f10060a0b1ec33a" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.UnitMonitor" Version="1.0.0.0">
+      <UnitMonitorConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <MonitorType>Community.VMware.MonitorType.DatastorePerfBelowThreshold</MonitorType>
+        <MonitorConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;DatastoreId&gt;$Target/Property[Type='Community.VMware.Class.Datastore']/DatastoreId$&lt;/DatastoreId&gt;&lt;DatastoreName&gt;$Target/Property[Type='Community.VMware.Class.Datastore']/DatastoreName$&lt;/DatastoreName&gt;&lt;CounterName&gt;Space Free GB&lt;/CounterName&gt;&lt;PerfValueName&gt;FREE_GB&lt;/PerfValueName&gt;&lt;WarningThreshold&gt;10&lt;/WarningThreshold&gt;&lt;CriticalThreshold&gt;1&lt;/CriticalThreshold&gt;&lt;NumSamples&gt;0&lt;/NumSamples&gt;</MonitorConfig>
+        <MonitorOperationalStates>
+          <OperationalState>
+            <OperationalStateId>Healthy</OperationalStateId>
+            <OperationalStateDisplayName>Healthy</OperationalStateDisplayName>
+            <MonitorTypeStateId>Healthy</MonitorTypeStateId>
+            <HealthState>Success</HealthState>
+          </OperationalState>
+          <OperationalState>
+            <OperationalStateId>Warning</OperationalStateId>
+            <OperationalStateDisplayName>Warning</OperationalStateDisplayName>
+            <MonitorTypeStateId>Warning</MonitorTypeStateId>
+            <HealthState>Warning</HealthState>
+          </OperationalState>
+          <OperationalState>
+            <OperationalStateId>Critical</OperationalStateId>
+            <OperationalStateDisplayName>Critical</OperationalStateDisplayName>
+            <MonitorTypeStateId>Critical</MonitorTypeStateId>
+            <HealthState>Error</HealthState>
+          </OperationalState>
+        </MonitorOperationalStates>
+        <MonitorRunAs>Community.VMware.SecureReference.RunAsProfile</MonitorRunAs>
+        <ParentMonitor>Health!System.Health.PerformanceState</ParentMonitor>
+        <Accessibility>Internal</Accessibility>
+        <Id>UnitMonitor.DatastoreSpaceFreeGB</Id>
+        <DisplayName>VMware Datastore Space Free GB</DisplayName>
+        <Description />
+        <Target>Community.VMware.Class.Datastore</Target>
+        <Enabled>true</Enabled>
+        <Category>PerformanceHealth</Category>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <AlertAutoResolve>true</AlertAutoResolve>
+        <AlertOnState>Error</AlertOnState>
+        <AlertPriority>Normal</AlertPriority>
+        <AlertSeverity>MatchMonitorHealth</AlertSeverity>
+        <AlertName>VMware Datastore Space Free GB</AlertName>
+        <AlertDescription>The datastore space free GB of $Target/Property[Type="Community.VMware.Class.Datastore"]/DatastoreName$ is $Data/Context/SampleValue$.</AlertDescription>
+        <ConfirmDelivery>false</ConfirmDelivery>
+      </UnitMonitorConfig>
+    </Instance>
+  </Instances>
+</TemplateGroup>

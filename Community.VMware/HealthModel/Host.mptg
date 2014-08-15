@@ -1,0 +1,548 @@
+<TemplateGroup>
+  <Instances>
+    <Instance ID="Instancefeff10325c1f4a47ade368211bf866a5" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>Discovery.Host</Id>
+        <DisplayName>VMware Host Discovery</DisplayName>
+        <Description>PowerShell script that connects to vCenter to discover Hosts</Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;14400&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:10&lt;/SyncTime&gt;&lt;ScriptName&gt;Community.VMware.Discovery.Host.ps1&lt;/ScriptName&gt;&lt;ScriptBody&gt;$IncludeFileContent/Scripts/HostDiscovery.ps1$&lt;/ScriptBody&gt;&lt;Parameters&gt;&lt;Parameter&gt;&lt;Name&gt;sourceID&lt;/Name&gt;&lt;Value&gt;$MPElement$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;managedEntityID&lt;/Name&gt;&lt;Value&gt;$Target/Id$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;vCenterServerName&lt;/Name&gt;&lt;Value&gt;$Target/Property[Type="Community.VMware.Class.vCenter"]/vCenterServerName$&lt;/Value&gt;&lt;/Parameter&gt;&lt;/Parameters&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Windows!Microsoft.Windows.TimedPowerShell.DiscoveryProvider</DataSourceType>
+        <Target>Community.VMware.Class.vCenter</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses>
+          <DiscoveryClassItem>
+            <TypeId>Community.VMware.Class.Host</TypeId>
+            <Properties />
+          </DiscoveryClassItem>
+        </DiscoveryClasses>
+        <DiscoveryRelationships>
+          <DiscoveryRelationshipItem>
+            <TypeId>Community.VMware.Relationship.vCenterHostsHost</TypeId>
+            <Properties />
+          </DiscoveryRelationshipItem>
+        </DiscoveryRelationships>
+      </DiscoveryConfig>
+    </Instance>
+    <Instance ID="Instance9dc3dfb6b7f142c683e30d31770de422" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>Discovery.HostDatastoreReference</Id>
+        <DisplayName>VMware Host Datastore Reference Relationship Discovery</DisplayName>
+        <Description>PowerShell script that connects to SCOM to discover Host Datastore Reference Relationships</Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;7200&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;01:15&lt;/SyncTime&gt;&lt;ScriptName&gt;Community.VMware.Discovery.HostDatastoreReference.ps1&lt;/ScriptName&gt;&lt;ScriptBody&gt;$IncludeFileContent/Scripts/HostDatastoreReferenceDiscovery.ps1$&lt;/ScriptBody&gt;&lt;Parameters&gt;&lt;Parameter&gt;&lt;Name&gt;sourceID&lt;/Name&gt;&lt;Value&gt;$MPElement$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;managedEntityID&lt;/Name&gt;&lt;Value&gt;$Target/Id$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;vCenterServerName&lt;/Name&gt;&lt;Value&gt;$Target/Property[Type="Community.VMware.Class.vCenter"]/vCenterServerName$&lt;/Value&gt;&lt;/Parameter&gt;&lt;/Parameters&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Windows!Microsoft.Windows.TimedPowerShell.DiscoveryProvider</DataSourceType>
+        <Target>Community.VMware.Class.vCenter</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses />
+        <DiscoveryRelationships>
+          <DiscoveryRelationshipItem>
+            <TypeId>Community.VMware.Relationship.HostReferencesDatastore</TypeId>
+            <Properties />
+          </DiscoveryRelationshipItem>
+        </DiscoveryRelationships>
+      </DiscoveryConfig>
+    </Instance>
+    <Instance ID="Instanceb6933efec2c8428285497b3b47a04e50" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>Discovery.HostNetworkReference</Id>
+        <DisplayName>VMware Host Network Reference Relationship Discovery</DisplayName>
+        <Description>PowerShell script that connects to SCOM to discover Host Network Reference Relationships</Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;7200&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;01:20&lt;/SyncTime&gt;&lt;ScriptName&gt;Community.VMware.Discovery.HostNetworkReference.ps1&lt;/ScriptName&gt;&lt;ScriptBody&gt;$IncludeFileContent/Scripts/HostNetworkReferenceDiscovery.ps1$&lt;/ScriptBody&gt;&lt;Parameters&gt;&lt;Parameter&gt;&lt;Name&gt;sourceID&lt;/Name&gt;&lt;Value&gt;$MPElement$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;managedEntityID&lt;/Name&gt;&lt;Value&gt;$Target/Id$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;vCenterServerName&lt;/Name&gt;&lt;Value&gt;$Target/Property[Type="Community.VMware.Class.vCenter"]/vCenterServerName$&lt;/Value&gt;&lt;/Parameter&gt;&lt;/Parameters&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Windows!Microsoft.Windows.TimedPowerShell.DiscoveryProvider</DataSourceType>
+        <Target>Community.VMware.Class.vCenter</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses />
+        <DiscoveryRelationships>
+          <DiscoveryRelationshipItem>
+            <TypeId>Community.VMware.Relationship.HostReferencesNetwork</TypeId>
+            <Properties />
+          </DiscoveryRelationshipItem>
+        </DiscoveryRelationships>
+      </DiscoveryConfig>
+    </Instance>
+    <Instance ID="Instance16bc48de952845cba120bcd22078ea3c" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>Discovery.HostDatacenterReference</Id>
+        <DisplayName>VMware Host Datacenter Reference Relationship Discovery</DisplayName>
+        <Description>PowerShell script that connects to SCOM to discover Host Datacenter Reference Relationships</Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;21600&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;01:25&lt;/SyncTime&gt;&lt;ScriptName&gt;Community.VMware.Discovery.HostDatacenterReference.ps1&lt;/ScriptName&gt;&lt;ScriptBody&gt;$IncludeFileContent/Scripts/HostDatacenterReferenceDiscovery.ps1$&lt;/ScriptBody&gt;&lt;Parameters&gt;&lt;Parameter&gt;&lt;Name&gt;sourceID&lt;/Name&gt;&lt;Value&gt;$MPElement$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;managedEntityID&lt;/Name&gt;&lt;Value&gt;$Target/Id$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;vCenterServerName&lt;/Name&gt;&lt;Value&gt;$Target/Property[Type="Community.VMware.Class.vCenter"]/vCenterServerName$&lt;/Value&gt;&lt;/Parameter&gt;&lt;/Parameters&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Windows!Microsoft.Windows.TimedPowerShell.DiscoveryProvider</DataSourceType>
+        <Target>Community.VMware.Class.vCenter</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses />
+        <DiscoveryRelationships>
+          <DiscoveryRelationshipItem>
+            <TypeId>Community.VMware.Relationship.HostReferencesDatacenter</TypeId>
+            <Properties />
+          </DiscoveryRelationshipItem>
+        </DiscoveryRelationships>
+      </DiscoveryConfig>
+    </Instance>
+    <Instance ID="Instance0db4bbec6a344176810a8049bb314294" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>CollectionRule.HostMemoryFreeMB</Id>
+        <DisplayName>VMware Host Memory Usage Free Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;&lt;HostName&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostName$&lt;/HostName&gt;&lt;CounterName&gt;Memory Free MB&lt;/CounterName&gt;&lt;PerfValueName&gt;MEM_FreeMB&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.HostPerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instance1a8f07bf49c14ddba4cd816eaadc76f9" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>CollectionRule.HostCPUfreeMHz</Id>
+        <DisplayName>VMware Host CPU Free MHz Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;&lt;HostName&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostName$&lt;/HostName&gt;&lt;CounterName&gt;CPU Free MHz&lt;/CounterName&gt;&lt;PerfValueName&gt;CPU_FreeMHz&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.HostPerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instancecb810269a04c4d54902eeebd34f35076" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>CollectionRule.HostCPUusagePercent</Id>
+        <DisplayName>VMware Host CPU Usage Percent Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;&lt;HostName&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostName$&lt;/HostName&gt;&lt;CounterName&gt;CPU Usage Percent&lt;/CounterName&gt;&lt;PerfValueName&gt;CPU_Percent&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.HostPerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instance7cf1ede095ec49749b67c505ef2ee644" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>CollectionRule.HostCPUusageMHz</Id>
+        <DisplayName>VMware Host CPU Usage MHz Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;&lt;HostName&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostName$&lt;/HostName&gt;&lt;CounterName&gt;CPU Usage MHz&lt;/CounterName&gt;&lt;PerfValueName&gt;CPU_UsageMHz&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.HostPerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instance9777600bdf4c473994dfe724a1f3dc88" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>CollectionRule.HostMemoryUsagePercent</Id>
+        <DisplayName>VMware Host Memory Usage Percent Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;&lt;HostName&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostName$&lt;/HostName&gt;&lt;CounterName&gt;Memory Usage Percent&lt;/CounterName&gt;&lt;PerfValueName&gt;MEM_Percent&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.HostPerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instancebe0d2cbdbfce4e0d9fa27c73326292be" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>CollectionRule.HostMemoryUsageMB</Id>
+        <DisplayName>VMware Host Memory Usage MB Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;&lt;HostName&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostName$&lt;/HostName&gt;&lt;CounterName&gt;Memory Usage MB&lt;/CounterName&gt;&lt;PerfValueName&gt;MEM_UsageMB&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.HostPerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instancef8893276fa4c486c9e95cd689d244f76" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>CollectionRule.HostCPUcapacityMHz</Id>
+        <DisplayName>VMware Host CPU Capacity MHz Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;&lt;HostName&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostName$&lt;/HostName&gt;&lt;CounterName&gt;CPU Capacity MHz&lt;/CounterName&gt;&lt;PerfValueName&gt;CPU_MaxMHz&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.HostPerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instanced79e4d09c4b943bf843e8f95cd04f597" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>CollectionRule.HostMemoryCapacityMB</Id>
+        <DisplayName>VMware Host Memory Usage Capacity Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;&lt;HostName&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostName$&lt;/HostName&gt;&lt;CounterName&gt;Memory Capacity MB&lt;/CounterName&gt;&lt;PerfValueName&gt;MEM_MaxMB&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.HostPerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instancedc0c226b952f468dae1b6c85913889d1" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.UnitMonitor" Version="1.0.0.0">
+      <UnitMonitorConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <MonitorType>Community.VMware.MonitorType.HostPerfAboveThreshold</MonitorType>
+        <MonitorConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;&lt;HostName&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostName$&lt;/HostName&gt;&lt;CounterName&gt;Memory Usage Percent&lt;/CounterName&gt;&lt;PerfValueName&gt;MEM_Percent&lt;/PerfValueName&gt;&lt;WarningThreshold&gt;90&lt;/WarningThreshold&gt;&lt;CriticalThreshold&gt;98&lt;/CriticalThreshold&gt;&lt;NumSamples&gt;0&lt;/NumSamples&gt;</MonitorConfig>
+        <MonitorOperationalStates>
+          <OperationalState>
+            <OperationalStateId>Healthy</OperationalStateId>
+            <OperationalStateDisplayName>Healthy</OperationalStateDisplayName>
+            <MonitorTypeStateId>Healthy</MonitorTypeStateId>
+            <HealthState>Success</HealthState>
+          </OperationalState>
+          <OperationalState>
+            <OperationalStateId>Warning</OperationalStateId>
+            <OperationalStateDisplayName>Warning</OperationalStateDisplayName>
+            <MonitorTypeStateId>Warning</MonitorTypeStateId>
+            <HealthState>Warning</HealthState>
+          </OperationalState>
+          <OperationalState>
+            <OperationalStateId>Critical</OperationalStateId>
+            <OperationalStateDisplayName>Critical</OperationalStateDisplayName>
+            <MonitorTypeStateId>Critical</MonitorTypeStateId>
+            <HealthState>Error</HealthState>
+          </OperationalState>
+        </MonitorOperationalStates>
+        <MonitorRunAs>Community.VMware.SecureReference.RunAsProfile</MonitorRunAs>
+        <ParentMonitor>Health!System.Health.PerformanceState</ParentMonitor>
+        <Accessibility>Internal</Accessibility>
+        <Id>UnitMonitor.HostMemoryUsagePercent</Id>
+        <DisplayName>VMware Host Memory Usage Percent</DisplayName>
+        <Description />
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Category>AvailabilityHealth</Category>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <AlertAutoResolve>true</AlertAutoResolve>
+        <AlertOnState>Warning</AlertOnState>
+        <AlertPriority>Normal</AlertPriority>
+        <AlertSeverity>MatchMonitorHealth</AlertSeverity>
+        <AlertName>VMware Host Memory Usage Percent</AlertName>
+        <AlertDescription>The Memory usage percent of $Target/Property[Type="Community.VMware.Class.Host"]/HostName$ is $Data/Context/SampleValue$.</AlertDescription>
+        <ConfirmDelivery>false</ConfirmDelivery>
+      </UnitMonitorConfig>
+    </Instance>
+    <Instance ID="Instanceefdfc0e2534d48068833ab2b16566de8" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.UnitMonitor" Version="1.0.0.0">
+      <UnitMonitorConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <MonitorType>Community.VMware.MonitorType.HostDatastorePerfBelowThreshold</MonitorType>
+        <MonitorConfig>&lt;IntervalSeconds&gt;600&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;&lt;HostName&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostName$&lt;/HostName&gt;&lt;IsStandalone&gt;$Target/Property[Type='Community.VMware.Class.Host']/IsStandalone$&lt;/IsStandalone&gt;&lt;CounterName&gt;Datastore Space Free Percent&lt;/CounterName&gt;&lt;PerfValueName&gt;FREE_Percent&lt;/PerfValueName&gt;&lt;WarningThreshold&gt;15&lt;/WarningThreshold&gt;&lt;CriticalThreshold&gt;2&lt;/CriticalThreshold&gt;&lt;NumSamples&gt;0&lt;/NumSamples&gt;</MonitorConfig>
+        <MonitorOperationalStates>
+          <OperationalState>
+            <OperationalStateId>Healthy</OperationalStateId>
+            <OperationalStateDisplayName>Healthy</OperationalStateDisplayName>
+            <MonitorTypeStateId>Healthy</MonitorTypeStateId>
+            <HealthState>Success</HealthState>
+          </OperationalState>
+          <OperationalState>
+            <OperationalStateId>Warning</OperationalStateId>
+            <OperationalStateDisplayName>Warning</OperationalStateDisplayName>
+            <MonitorTypeStateId>Warning</MonitorTypeStateId>
+            <HealthState>Warning</HealthState>
+          </OperationalState>
+          <OperationalState>
+            <OperationalStateId>Critical</OperationalStateId>
+            <OperationalStateDisplayName>Critical</OperationalStateDisplayName>
+            <MonitorTypeStateId>Critical</MonitorTypeStateId>
+            <HealthState>Error</HealthState>
+          </OperationalState>
+        </MonitorOperationalStates>
+        <MonitorRunAs>Community.VMware.SecureReference.RunAsProfile</MonitorRunAs>
+        <ParentMonitor>Health!System.Health.PerformanceState</ParentMonitor>
+        <Accessibility>Internal</Accessibility>
+        <Id>UnitMonitor.HostDatastoreSpaceFreePercent</Id>
+        <DisplayName>VMware Host Datastore Space Free Percent</DisplayName>
+        <Description />
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Category>AvailabilityHealth</Category>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <AlertAutoResolve>true</AlertAutoResolve>
+        <AlertOnState>Warning</AlertOnState>
+        <AlertPriority>Normal</AlertPriority>
+        <AlertSeverity>MatchMonitorHealth</AlertSeverity>
+        <AlertName>VMware Host Datastore Space Free Percent</AlertName>
+        <AlertDescription>The datastore free percent of $Target/Property[Type="Community.VMware.Class.Host"]/HostName$ is $Data/Context/SampleValue$.</AlertDescription>
+        <ConfirmDelivery>false</ConfirmDelivery>
+      </UnitMonitorConfig>
+    </Instance>
+    <Instance ID="Instancec2b61b5a686047a98f6ad42e1ac16cbc" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.UnitMonitor" Version="1.0.0.0">
+      <UnitMonitorConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <MonitorType>Community.VMware.MonitorType.HostPerfAboveThreshold</MonitorType>
+        <MonitorConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;&lt;HostName&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostName$&lt;/HostName&gt;&lt;CounterName&gt;CPU Usage Percent&lt;/CounterName&gt;&lt;PerfValueName&gt;CPU_Percent&lt;/PerfValueName&gt;&lt;WarningThreshold&gt;75&lt;/WarningThreshold&gt;&lt;CriticalThreshold&gt;95&lt;/CriticalThreshold&gt;&lt;NumSamples&gt;0&lt;/NumSamples&gt;</MonitorConfig>
+        <MonitorOperationalStates>
+          <OperationalState>
+            <OperationalStateId>Healthy</OperationalStateId>
+            <OperationalStateDisplayName>Healthy</OperationalStateDisplayName>
+            <MonitorTypeStateId>Healthy</MonitorTypeStateId>
+            <HealthState>Success</HealthState>
+          </OperationalState>
+          <OperationalState>
+            <OperationalStateId>Warning</OperationalStateId>
+            <OperationalStateDisplayName>Warning</OperationalStateDisplayName>
+            <MonitorTypeStateId>Warning</MonitorTypeStateId>
+            <HealthState>Warning</HealthState>
+          </OperationalState>
+          <OperationalState>
+            <OperationalStateId>Critical</OperationalStateId>
+            <OperationalStateDisplayName>Critical</OperationalStateDisplayName>
+            <MonitorTypeStateId>Critical</MonitorTypeStateId>
+            <HealthState>Error</HealthState>
+          </OperationalState>
+        </MonitorOperationalStates>
+        <MonitorRunAs>Community.VMware.SecureReference.RunAsProfile</MonitorRunAs>
+        <ParentMonitor>Health!System.Health.PerformanceState</ParentMonitor>
+        <Accessibility>Internal</Accessibility>
+        <Id>UnitMonitor.HostCPUusagePercent</Id>
+        <DisplayName>VMware Host CPU Usage Percent</DisplayName>
+        <Description />
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Category>AvailabilityHealth</Category>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <AlertAutoResolve>true</AlertAutoResolve>
+        <AlertOnState>Warning</AlertOnState>
+        <AlertPriority>Normal</AlertPriority>
+        <AlertSeverity>MatchMonitorHealth</AlertSeverity>
+        <AlertName>VMware Host CPU Usage Percent</AlertName>
+        <AlertDescription>The CPU usage percent of $Target/Property[Type="Community.VMware.Class.Host"]/HostName$ is $Data/Context/SampleValue$.</AlertDescription>
+        <ConfirmDelivery>false</ConfirmDelivery>
+      </UnitMonitorConfig>
+    </Instance>
+    <Instance ID="Instancecebbd81cced341c5a5f421026d163aeb" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>CollectionRule.HostDatastoreSpaceCapacityGB</Id>
+        <DisplayName>VMware Host Datastore Space Capacity GB Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;600&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;&lt;HostName&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostName$&lt;/HostName&gt;&lt;IsStandalone&gt;$Target/Property[Type='Community.VMware.Class.Host']/IsStandalone$&lt;/IsStandalone&gt;&lt;CounterName&gt;Datastore Space Capacity GB&lt;/CounterName&gt;&lt;PerfValueName&gt;CAPACITY_GB&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.HostDatastorePerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instance4c6ef942c1044d6b80f279293b5641bc" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>CollectionRule.HostDatastoreSpaceUsedPercent</Id>
+        <DisplayName>VMware Host Datastore Space Used Percent Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;600&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;&lt;HostName&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostName$&lt;/HostName&gt;&lt;IsStandalone&gt;$Target/Property[Type='Community.VMware.Class.Host']/IsStandalone$&lt;/IsStandalone&gt;&lt;CounterName&gt;Datastore Space Used Percent&lt;/CounterName&gt;&lt;PerfValueName&gt;USED_Percent&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.HostDatastorePerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instance2078be3ddc464a0cbd1327947ec44ac7" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>CollectionRule.HostDatastoreSpaceUsedGB</Id>
+        <DisplayName>VMware Host Datastore Space Used GB Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;600&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;&lt;HostName&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostName$&lt;/HostName&gt;&lt;IsStandalone&gt;$Target/Property[Type='Community.VMware.Class.Host']/IsStandalone$&lt;/IsStandalone&gt;&lt;CounterName&gt;Datastore Space Used GB&lt;/CounterName&gt;&lt;PerfValueName&gt;USED_GB&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.HostDatastorePerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instance7fe9438da9614d0691811a3902a461e0" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>CollectionRule.HostDatastoreSpaceFreeGB</Id>
+        <DisplayName>VMware Host Datastore Space Free GB Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;600&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;&lt;HostName&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostName$&lt;/HostName&gt;&lt;IsStandalone&gt;$Target/Property[Type='Community.VMware.Class.Host']/IsStandalone$&lt;/IsStandalone&gt;&lt;CounterName&gt;Datastore Space Free GB&lt;/CounterName&gt;&lt;PerfValueName&gt;FREE_GB&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.HostDatastorePerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instancee5d1676f6ea94f83a50f348fe626044a" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
+      <PerformanceCollectionRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>CollectionRule.HostDatastoreSpaceFreePercent</Id>
+        <DisplayName>VMware Host Datastore Space Free Percent Collection</DisplayName>
+        <Description />
+        <Category>PerformanceCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;600&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;&lt;HostName&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostName$&lt;/HostName&gt;&lt;IsStandalone&gt;$Target/Property[Type='Community.VMware.Class.Host']/IsStandalone$&lt;/IsStandalone&gt;&lt;CounterName&gt;Datastore Space Free Percent&lt;/CounterName&gt;&lt;PerfValueName&gt;FREE_Percent&lt;/PerfValueName&gt;&lt;Tolerance&gt;0&lt;/Tolerance&gt;&lt;ToleranceType&gt;Absolute&lt;/ToleranceType&gt;&lt;MaximumSampleSeparation&gt;1&lt;/MaximumSampleSeparation&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Community.VMware.DataSource.HostDatastorePerfOptimized</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </PerformanceCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instancee016b6bd1ef04565955e96f18fbde668" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.UnitMonitor" Version="1.0.0.0">
+      <UnitMonitorConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <MonitorType>Community.VMware.MonitorType.HostPowerState</MonitorType>
+        <MonitorConfig>&lt;IntervalSeconds&gt;120&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;120&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;HostId&gt;$Target/Property[Type='Community.VMware.Class.Host']/HostId$&lt;/HostId&gt;</MonitorConfig>
+        <MonitorOperationalStates>
+          <OperationalState>
+            <OperationalStateId>PoweredOn</OperationalStateId>
+            <OperationalStateDisplayName>PoweredOn</OperationalStateDisplayName>
+            <MonitorTypeStateId>PoweredOn</MonitorTypeStateId>
+            <HealthState>Success</HealthState>
+          </OperationalState>
+          <OperationalState>
+            <OperationalStateId>NotPoweredOn</OperationalStateId>
+            <OperationalStateDisplayName>NotPoweredOn</OperationalStateDisplayName>
+            <MonitorTypeStateId>NotPoweredOn</MonitorTypeStateId>
+            <HealthState>Error</HealthState>
+          </OperationalState>
+        </MonitorOperationalStates>
+        <MonitorRunAs>Community.VMware.SecureReference.RunAsProfile</MonitorRunAs>
+        <ParentMonitor>Health!System.Health.AvailabilityState</ParentMonitor>
+        <Accessibility>Internal</Accessibility>
+        <Id>UnitMonitor.HostPowerState</Id>
+        <DisplayName>VMware Host Power State</DisplayName>
+        <Description />
+        <Target>Community.VMware.Class.Host</Target>
+        <Enabled>true</Enabled>
+        <Category>AvailabilityHealth</Category>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <AlertAutoResolve>true</AlertAutoResolve>
+        <AlertOnState>Error</AlertOnState>
+        <AlertPriority>Normal</AlertPriority>
+        <AlertSeverity>MatchMonitorHealth</AlertSeverity>
+        <AlertName>VMware Host Power State</AlertName>
+        <AlertDescription>The current power state of the host is NOT powered on, the state is $Data/Context/Property[@Name='PowerState']$.</AlertDescription>
+        <ConfirmDelivery>false</ConfirmDelivery>
+      </UnitMonitorConfig>
+    </Instance>
+  </Instances>
+</TemplateGroup>

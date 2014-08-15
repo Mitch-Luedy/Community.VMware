@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{D4B43EB3-688B-4EEE-86BD-088F0B28ABB3}") = "Community.VMware", "Community.VMware\Community.VMware.mpproj", "{1D3123D0-5809-4752-A9B3-1D93CFEBC436}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D3123D0-5809-4752-A9B3-1D93CFEBC436}.Debug|x86.ActiveCfg = Debug|x86
+		{1D3123D0-5809-4752-A9B3-1D93CFEBC436}.Debug|x86.Build.0 = Debug|x86
+		{1D3123D0-5809-4752-A9B3-1D93CFEBC436}.Release|x86.ActiveCfg = Release|x86
+		{1D3123D0-5809-4752-A9B3-1D93CFEBC436}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,27 @@
+<TemplateGroup>
+  <Instances>
+    <Instance ID="Instance206b798768054c8baf322071b5fce661" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>Discovery.Group.AllObjects</Id>
+        <DisplayName>Community - VMware All Objects Group Discovery</DisplayName>
+        <Description />
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;RuleId&gt;$MPElement$&lt;/RuleId&gt;&lt;GroupInstanceId&gt;$Target/Id$&lt;/GroupInstanceId&gt;&lt;MembershipRules&gt;&lt;MembershipRule&gt;&lt;MonitoringClass&gt;$MPElement[Name="Community.VMware.Class.Cluster"]$&lt;/MonitoringClass&gt;&lt;RelationshipClass&gt;$MPElement[Name="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities"]$&lt;/RelationshipClass&gt;&lt;/MembershipRule&gt;&lt;MembershipRule&gt;&lt;MonitoringClass&gt;$MPElement[Name="Community.VMware.Class.Datacenter"]$&lt;/MonitoringClass&gt;&lt;RelationshipClass&gt;$MPElement[Name="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities"]$&lt;/RelationshipClass&gt;&lt;/MembershipRule&gt;&lt;MembershipRule&gt;&lt;MonitoringClass&gt;$MPElement[Name="Community.VMware.Class.Datastore"]$&lt;/MonitoringClass&gt;&lt;RelationshipClass&gt;$MPElement[Name="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities"]$&lt;/RelationshipClass&gt;&lt;/MembershipRule&gt;&lt;MembershipRule&gt;&lt;MonitoringClass&gt;$MPElement[Name="Community.VMware.Class.Network"]$&lt;/MonitoringClass&gt;&lt;RelationshipClass&gt;$MPElement[Name="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities"]$&lt;/RelationshipClass&gt;&lt;/MembershipRule&gt;&lt;MembershipRule&gt;&lt;MonitoringClass&gt;$MPElement[Name="Community.VMware.Class.Datacenter"]$&lt;/MonitoringClass&gt;&lt;RelationshipClass&gt;$MPElement[Name="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities"]$&lt;/RelationshipClass&gt;&lt;/MembershipRule&gt;&lt;MembershipRule&gt;&lt;MonitoringClass&gt;$MPElement[Name="Community.VMware.Class.vApp"]$&lt;/MonitoringClass&gt;&lt;RelationshipClass&gt;$MPElement[Name="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities"]$&lt;/RelationshipClass&gt;&lt;/MembershipRule&gt;&lt;MembershipRule&gt;&lt;MonitoringClass&gt;$MPElement[Name="Community.VMware.Class.vCenter"]$&lt;/MonitoringClass&gt;&lt;RelationshipClass&gt;$MPElement[Name="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities"]$&lt;/RelationshipClass&gt;&lt;/MembershipRule&gt;&lt;MembershipRule&gt;&lt;MonitoringClass&gt;$MPElement[Name="Community.VMware.Class.vCenterServerService"]$&lt;/MonitoringClass&gt;&lt;RelationshipClass&gt;$MPElement[Name="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities"]$&lt;/RelationshipClass&gt;&lt;/MembershipRule&gt;&lt;MembershipRule&gt;&lt;MonitoringClass&gt;$MPElement[Name="Community.VMware.Class.VirtualMachine"]$&lt;/MonitoringClass&gt;&lt;RelationshipClass&gt;$MPElement[Name="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities"]$&lt;/RelationshipClass&gt;&lt;/MembershipRule&gt;&lt;/MembershipRules&gt;</DataSourceConfig>
+        <DataSourceType>SC!Microsoft.SystemCenter.GroupPopulator</DataSourceType>
+        <Target>Community.VMware.Class.Group.AllObjects</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses />
+        <DiscoveryRelationships>
+          <DiscoveryRelationshipItem>
+            <TypeId>MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities</TypeId>
+            <Properties />
+          </DiscoveryRelationshipItem>
+        </DiscoveryRelationships>
+      </DiscoveryConfig>
+    </Instance>
+  </Instances>
+</TemplateGroup>

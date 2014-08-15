@@ -1,0 +1,24 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Presentation>
+    <Folders>
+      <Folder ID="Community.VMware.Folder.Root" Accessibility="Public" ParentFolder="SC!Microsoft.SystemCenter.Monitoring.ViewFolder.Root" />
+      <Folder ID="Community.VMware.Folder.InventoryObjects" Accessibility="Public" ParentFolder="Community.VMware.Folder.Root" />
+    </Folders>
+    <FolderItems>
+    </FolderItems>
+  </Presentation>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Community.VMware.Folder.Root">
+          <Name>VMware</Name>
+          <Description>Community VMware root view folder</Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Folder.InventoryObjects">
+          <Name>1. Inventory Objects</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

@@ -1,0 +1,150 @@
+<TemplateGroup>
+  <Instances>
+    <Instance ID="Instanceaac2f41d1cd940b795894c063f089c83" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomView" Version="1.0.0.0">
+      <CustomViewConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <ViewFolder>Unix!Microsoft.Unix.Folder.Root</ViewFolder>
+        <ViewType>SC!Microsoft.SystemCenter.StateViewType</ViewType>
+        <Visible>false</Visible>
+        <Accessibility>Internal</Accessibility>
+        <Id>View.UnixReference</Id>
+        <DisplayName>Community - Unix View For MP Reference</DisplayName>
+        <Description>Not Visible, only used to create MP reference for Microsoft.Unix.Library</Description>
+        <Target>Unix!Microsoft.Unix.Computer</Target>
+        <Category>Operations</Category>
+      </CustomViewConfig>
+    </Instance>
+    <Instance ID="Instance2f0c6b5f34b0458a9f1a137e7403d87d" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomView" Version="1.0.0.0">
+      <CustomViewConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <ViewFolder>Community.VMware.Folder.Root</ViewFolder>
+        <ViewType>SC!Microsoft.SystemCenter.StateViewType</ViewType>
+        <ViewConfiguration>&lt;Presentation&gt;&lt;ColumnInfo Index="0" SortIndex="0" Width="100" Grouped="false" Sorted="true" IsSortable="true" Visible="true" SortOrder="Descending"&gt;&lt;Name&gt;State&lt;/Name&gt;&lt;Id&gt;Community.VMware.Class.vCenter&lt;/Id&gt;&lt;/ColumnInfo&gt;&lt;ColumnInfo Index="1" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending"&gt;&lt;Name&gt;In Maintenance Mode&lt;/Name&gt;&lt;Id&gt;InMaintenanceMode&lt;/Id&gt;&lt;/ColumnInfo&gt;&lt;ColumnInfo Index="2" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending"&gt;&lt;Name&gt;Name&lt;/Name&gt;&lt;Id&gt;Name&lt;/Id&gt;&lt;/ColumnInfo&gt;&lt;ColumnInfo Index="3" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending"&gt;&lt;Name&gt;Path&lt;/Name&gt;&lt;Id&gt;Path&lt;/Id&gt;&lt;/ColumnInfo&gt;&lt;ColumnInfo Index="4" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending"&gt;&lt;Name&gt;Display Name&lt;/Name&gt;&lt;Id&gt;System.Entity/DisplayName&lt;/Id&gt;&lt;/ColumnInfo&gt;&lt;ColumnInfo Index="5" SortIndex="-1" Width="150" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending"&gt;&lt;Name&gt;vCenter Server Name&lt;/Name&gt;&lt;Id&gt;Community.VMware.Class.vCenter/vCenterServerName&lt;/Id&gt;&lt;/ColumnInfo&gt;&lt;ColumnInfo Index="10" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending"&gt;&lt;Name&gt;Community - VMware - vApp&lt;/Name&gt;&lt;Id&gt;Community.VMware.Class.vApp&lt;/Id&gt;&lt;/ColumnInfo&gt;&lt;ColumnInfo Index="8" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending"&gt;&lt;Name&gt;Community - VMware - Host&lt;/Name&gt;&lt;Id&gt;Community.VMware.Class.Host&lt;/Id&gt;&lt;/ColumnInfo&gt;&lt;ColumnInfo Index="9" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending"&gt;&lt;Name&gt;Community - VMware - Virtual Machine&lt;/Name&gt;&lt;Id&gt;Community.VMware.Class.VirtualMachine&lt;/Id&gt;&lt;/ColumnInfo&gt;&lt;ColumnInfo Index="12" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending"&gt;&lt;Name&gt;Community - VMware - Network&lt;/Name&gt;&lt;Id&gt;Community.VMware.Class.Network&lt;/Id&gt;&lt;/ColumnInfo&gt;&lt;ColumnInfo Index="11" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending"&gt;&lt;Name&gt;Community - VMware - Datastore&lt;/Name&gt;&lt;Id&gt;Community.VMware.Class.Datastore&lt;/Id&gt;&lt;/ColumnInfo&gt;&lt;ColumnInfo Index="6" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending"&gt;&lt;Name&gt;Community - VMware - Datacenter&lt;/Name&gt;&lt;Id&gt;Community.VMware.Class.Datacenter&lt;/Id&gt;&lt;/ColumnInfo&gt;&lt;ColumnInfo Index="7" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending"&gt;&lt;Name&gt;Community - VMware - Cluster&lt;/Name&gt;&lt;Id&gt;Community.VMware.Class.Cluster&lt;/Id&gt;&lt;/ColumnInfo&gt;&lt;/Presentation&gt;</ViewConfiguration>
+        <Visible>true</Visible>
+        <Accessibility>Internal</Accessibility>
+        <Id>View.StatevCenter</Id>
+        <DisplayName>3. vCenter Object States</DisplayName>
+        <Description>vCenter State View</Description>
+        <Target>Community.VMware.Class.vCenter</Target>
+        <Category>Operations</Category>
+      </CustomViewConfig>
+    </Instance>
+    <Instance ID="Instance9f6825f73a3d4aa297f638eaebc64494" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomView" Version="1.0.0.0">
+      <CustomViewConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <ViewFolder>Community.VMware.Folder.InventoryObjects</ViewFolder>
+        <ViewType>SC!Microsoft.SystemCenter.StateViewType</ViewType>
+        <Visible>true</Visible>
+        <Accessibility>Internal</Accessibility>
+        <Id>View.StateVirtualMachine</Id>
+        <DisplayName>7. Virtual Machines</DisplayName>
+        <Description>Virtual Machine State View</Description>
+        <Target>Community.VMware.Class.VirtualMachine</Target>
+        <Category>Operations</Category>
+      </CustomViewConfig>
+    </Instance>
+    <Instance ID="Instance7efd90f55adf45019c6da0b584a241ba" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomView" Version="1.0.0.0">
+      <CustomViewConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <ViewFolder>Community.VMware.Folder.InventoryObjects</ViewFolder>
+        <ViewType>SC!Microsoft.SystemCenter.StateViewType</ViewType>
+        <Visible>true</Visible>
+        <Accessibility>Internal</Accessibility>
+        <Id>View.StateHost</Id>
+        <DisplayName>3. Hosts</DisplayName>
+        <Description>Host State View</Description>
+        <Target>Community.VMware.Class.Host</Target>
+        <Category>Operations</Category>
+      </CustomViewConfig>
+    </Instance>
+    <Instance ID="Instance0dfb19f18ec044079d60980eceac47cd" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomView" Version="1.0.0.0">
+      <CustomViewConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <ViewFolder>Community.VMware.Folder.Root</ViewFolder>
+        <ViewType>SC!Microsoft.SystemCenter.DiagramViewType</ViewType>
+        <ViewConfiguration>&lt;Presentation&gt;&lt;DiagramViewCriteria&gt;&lt;DiagramViewDisplay ShowVirtualGroup="false"&gt;&lt;ContainmentStyle&gt;Box&lt;/ContainmentStyle&gt;&lt;NodesPerRow&gt;5&lt;/NodesPerRow&gt;&lt;LevelsToShow&gt;2&lt;/LevelsToShow&gt;&lt;ContainmentLine&gt;&lt;Color /&gt;&lt;SourceArrow IsFilled="false"&gt;&lt;ArrowStyle&gt;NoAnchor&lt;/ArrowStyle&gt;&lt;/SourceArrow&gt;&lt;TargetArrow IsFilled="false"&gt;&lt;ArrowStyle&gt;ArrowAnchor&lt;/ArrowStyle&gt;&lt;/TargetArrow&gt;&lt;/ContainmentLine&gt;&lt;NonContainmentLine&gt;&lt;Color Red="6" Green="134" Blue="253" /&gt;&lt;SourceArrow IsFilled="false"&gt;&lt;ArrowStyle&gt;NoAnchor&lt;/ArrowStyle&gt;&lt;/SourceArrow&gt;&lt;TargetArrow IsFilled="false"&gt;&lt;ArrowStyle&gt;ArrowAnchor&lt;/ArrowStyle&gt;&lt;/TargetArrow&gt;&lt;LineStyle&gt;DashDotDot&lt;/LineStyle&gt;&lt;/NonContainmentLine&gt;&lt;/DiagramViewDisplay&gt;&lt;/DiagramViewCriteria&gt;&lt;/Presentation&gt;</ViewConfiguration>
+        <Visible>true</Visible>
+        <Accessibility>Internal</Accessibility>
+        <Id>View.DaigramvCenterRollup</Id>
+        <DisplayName>2. vCenter Topology Rollup</DisplayName>
+        <Description>vCenter Rollup Diagram View</Description>
+        <Target>Community.VMware.Class.Group.Rollup.vCenter</Target>
+        <Category>Operations</Category>
+      </CustomViewConfig>
+    </Instance>
+    <Instance ID="Instanceaa8a7668712e4792bbecb78864bc4d3f" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomView" Version="1.0.0.0">
+      <CustomViewConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <ViewFolder>Community.VMware.Folder.InventoryObjects</ViewFolder>
+        <ViewType>SC!Microsoft.SystemCenter.StateViewType</ViewType>
+        <Visible>true</Visible>
+        <Accessibility>Internal</Accessibility>
+        <Id>View.StateCluster</Id>
+        <DisplayName>2. Clusters</DisplayName>
+        <Description>Cluster State View</Description>
+        <Target>Community.VMware.Class.Cluster</Target>
+        <Category>Operations</Category>
+      </CustomViewConfig>
+    </Instance>
+    <Instance ID="Instance4968eaf481794de18372e401bf4f22ac" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomView" Version="1.0.0.0">
+      <CustomViewConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <ViewFolder>Community.VMware.Folder.InventoryObjects</ViewFolder>
+        <ViewType>SC!Microsoft.SystemCenter.StateViewType</ViewType>
+        <Visible>true</Visible>
+        <Accessibility>Internal</Accessibility>
+        <Id>View.StateDatastore</Id>
+        <DisplayName>4. Datastores</DisplayName>
+        <Description>Datastore State View</Description>
+        <Target>Community.VMware.Class.Datastore</Target>
+        <Category>Operations</Category>
+      </CustomViewConfig>
+    </Instance>
+    <Instance ID="Instance768870dfe56d44f88beb84ef7c29d9fe" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomView" Version="1.0.0.0">
+      <CustomViewConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <ViewFolder>Community.VMware.Folder.Root</ViewFolder>
+        <ViewType>SC!Microsoft.SystemCenter.AlertViewType</ViewType>
+        <ViewConfiguration>&lt;Criteria&gt;&lt;ResolutionState&gt;&lt;StateRange Operator="NotEquals"&gt;255&lt;/StateRange&gt;&lt;/ResolutionState&gt;&lt;/Criteria&gt;&lt;Target&gt;$MPElement[Name="Community.VMware.Class.Group.AllObjects"]$&lt;/Target&gt;</ViewConfiguration>
+        <Visible>true</Visible>
+        <Accessibility>Internal</Accessibility>
+        <Id>View.AlertAllObjects</Id>
+        <DisplayName>1. Active Alerts</DisplayName>
+        <Description>Active Alerts View</Description>
+        <Target>System!System.Entity</Target>
+        <Category>Operations</Category>
+      </CustomViewConfig>
+    </Instance>
+    <Instance ID="Instancead65fdfb1bf64c20b0fdc63dc0bc8043" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomView" Version="1.0.0.0">
+      <CustomViewConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <ViewFolder>Community.VMware.Folder.InventoryObjects</ViewFolder>
+        <ViewType>SC!Microsoft.SystemCenter.StateViewType</ViewType>
+        <Visible>true</Visible>
+        <Accessibility>Internal</Accessibility>
+        <Id>View.StateDatacenter</Id>
+        <DisplayName>1. Datacenters</DisplayName>
+        <Description>Datacenter State View</Description>
+        <Target>Community.VMware.Class.Datacenter</Target>
+        <Category>Operations</Category>
+      </CustomViewConfig>
+    </Instance>
+    <Instance ID="Instance3cad8adfe90f4d6384357ee163e85366" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomView" Version="1.0.0.0">
+      <CustomViewConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <ViewFolder>Community.VMware.Folder.InventoryObjects</ViewFolder>
+        <ViewType>SC!Microsoft.SystemCenter.StateViewType</ViewType>
+        <Visible>true</Visible>
+        <Accessibility>Internal</Accessibility>
+        <Id>View.StateNetwork</Id>
+        <DisplayName>5. Networks</DisplayName>
+        <Description>Network State View</Description>
+        <Target>Community.VMware.Class.Network</Target>
+        <Category>Operations</Category>
+      </CustomViewConfig>
+    </Instance>
+    <Instance ID="Instance0916adebce4f44929931471d984dd904" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomView" Version="1.0.0.0">
+      <CustomViewConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <ViewFolder>Community.VMware.Folder.InventoryObjects</ViewFolder>
+        <ViewType>SC!Microsoft.SystemCenter.StateViewType</ViewType>
+        <Visible>true</Visible>
+        <Accessibility>Internal</Accessibility>
+        <Id>View.StatevApp</Id>
+        <DisplayName>6. vApps</DisplayName>
+        <Description>vApp State View</Description>
+        <Target>Community.VMware.Class.vApp</Target>
+        <Category>Operations</Category>
+      </CustomViewConfig>
+    </Instance>
+  </Instances>
+</TemplateGroup>

@@ -1,0 +1,167 @@
+<TemplateGroup>
+  <Instances>
+    <Instance ID="Instanceab9e301040eb4b6587e7975c4d928f05" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>Discovery.VirtualMachineDatastoreReference</Id>
+        <DisplayName>VMware Virtual Machine Datastore Reference Relationship Discovery</DisplayName>
+        <Description>PowerShell script that connects to SCOM to discover Virtual Machine Datastore Reference Relationships</Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;7200&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;01:30&lt;/SyncTime&gt;&lt;ScriptName&gt;Community.VMware.Discovery.VirtualMachineDatastoreReference.ps1&lt;/ScriptName&gt;&lt;ScriptBody&gt;$IncludeFileContent/Scripts/VirtualMachineDatastoreReferenceDiscovery.ps1$&lt;/ScriptBody&gt;&lt;Parameters&gt;&lt;Parameter&gt;&lt;Name&gt;sourceID&lt;/Name&gt;&lt;Value&gt;$MPElement$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;managedEntityID&lt;/Name&gt;&lt;Value&gt;$Target/Id$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;vCenterServerName&lt;/Name&gt;&lt;Value&gt;$Target/Property[Type="Community.VMware.Class.vCenter"]/vCenterServerName$&lt;/Value&gt;&lt;/Parameter&gt;&lt;/Parameters&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Windows!Microsoft.Windows.TimedPowerShell.DiscoveryProvider</DataSourceType>
+        <Target>Community.VMware.Class.vCenter</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses />
+        <DiscoveryRelationships>
+          <DiscoveryRelationshipItem>
+            <TypeId>Community.VMware.Relationship.VirtualMachineReferencesDatastore</TypeId>
+            <Properties />
+          </DiscoveryRelationshipItem>
+        </DiscoveryRelationships>
+      </DiscoveryConfig>
+    </Instance>
+    <Instance ID="Instance87e3c4b9fd2c4103983d70ef32347abe" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>Discovery.VirtualMachine</Id>
+        <DisplayName>VMware Virtual Machine Discovery</DisplayName>
+        <Description>PowerShell script that connects to vCenter to discover Virtual Machines </Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;14400&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:35&lt;/SyncTime&gt;&lt;ScriptName&gt;Community.VMware.Discovery.VirtualMachine.ps1&lt;/ScriptName&gt;&lt;ScriptBody&gt;$IncludeFileContent/Scripts/VirtualMachineDiscovery.ps1$&lt;/ScriptBody&gt;&lt;Parameters&gt;&lt;Parameter&gt;&lt;Name&gt;sourceID&lt;/Name&gt;&lt;Value&gt;$MPElement$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;managedEntityID&lt;/Name&gt;&lt;Value&gt;$Target/Id$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;vCenterServerName&lt;/Name&gt;&lt;Value&gt;$Target/Property[Type="Community.VMware.Class.vCenter"]/vCenterServerName$&lt;/Value&gt;&lt;/Parameter&gt;&lt;/Parameters&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Windows!Microsoft.Windows.TimedPowerShell.DiscoveryProvider</DataSourceType>
+        <Target>Community.VMware.Class.vCenter</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses>
+          <DiscoveryClassItem>
+            <TypeId>Community.VMware.Class.VirtualMachine</TypeId>
+            <Properties />
+          </DiscoveryClassItem>
+        </DiscoveryClasses>
+        <DiscoveryRelationships>
+          <DiscoveryRelationshipItem>
+            <TypeId>Community.VMware.Relationship.vCenterHostsVirtualMachine</TypeId>
+            <Properties />
+          </DiscoveryRelationshipItem>
+        </DiscoveryRelationships>
+      </DiscoveryConfig>
+    </Instance>
+    <Instance ID="Instance1842fbd1cff94a09825b60e653e85f8c" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>Discovery.VirtualMachineComputerRelationship</Id>
+        <DisplayName>VMware Virtual Machine Computer Relationship Discovery</DisplayName>
+        <Description>PowerShell script that connects to SCOM to discover Virtual Machine Computer Relationships</Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;14400&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;01:40&lt;/SyncTime&gt;&lt;ScriptName&gt;Community.VMware.Discovery.VirtualMachineComputerRelationship.ps1&lt;/ScriptName&gt;&lt;ScriptBody&gt;$IncludeFileContent/Scripts/VirtualMachineComputerRelationshipDiscovery.ps1$&lt;/ScriptBody&gt;&lt;Parameters&gt;&lt;Parameter&gt;&lt;Name&gt;sourceID&lt;/Name&gt;&lt;Value&gt;$MPElement$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;managedEntityID&lt;/Name&gt;&lt;Value&gt;$Target/Id$&lt;/Value&gt;&lt;/Parameter&gt;&lt;/Parameters&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;</DataSourceConfig>
+        <DataSourceRunAs />
+        <DataSourceType>Windows!Microsoft.Windows.TimedPowerShell.DiscoveryProvider</DataSourceType>
+        <Target>Community.VMware.Class.ResourcePool</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses />
+        <DiscoveryRelationships>
+          <DiscoveryRelationshipItem>
+            <TypeId>SVL!System.VirtualMachineContainsComputer</TypeId>
+            <Properties />
+          </DiscoveryRelationshipItem>
+        </DiscoveryRelationships>
+      </DiscoveryConfig>
+    </Instance>
+    <Instance ID="Instancef6cd61357f6b4b269a68407753df2d9e" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>Discovery.VirtualMachineHostReference</Id>
+        <DisplayName>VMware Virtual Machine Host Reference Relationship Discovery</DisplayName>
+        <Description>PowerShell script that connects to SCOM to discover Virtual Machine Host Reference Relationships</Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;3600&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;01:45&lt;/SyncTime&gt;&lt;ScriptName&gt;Community.VMware.Discovery.VirtualMachineHostReference.ps1&lt;/ScriptName&gt;&lt;ScriptBody&gt;$IncludeFileContent/Scripts/VirtualMachineHostReferenceDiscovery.ps1$&lt;/ScriptBody&gt;&lt;Parameters&gt;&lt;Parameter&gt;&lt;Name&gt;sourceID&lt;/Name&gt;&lt;Value&gt;$MPElement$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;managedEntityID&lt;/Name&gt;&lt;Value&gt;$Target/Id$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;vCenterServerName&lt;/Name&gt;&lt;Value&gt;$Target/Property[Type="Community.VMware.Class.vCenter"]/vCenterServerName$&lt;/Value&gt;&lt;/Parameter&gt;&lt;/Parameters&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Windows!Microsoft.Windows.TimedPowerShell.DiscoveryProvider</DataSourceType>
+        <Target>Community.VMware.Class.vCenter</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses />
+        <DiscoveryRelationships>
+          <DiscoveryRelationshipItem>
+            <TypeId>Community.VMware.Relationship.VirtualMachineReferencesHost</TypeId>
+            <Properties />
+          </DiscoveryRelationshipItem>
+        </DiscoveryRelationships>
+      </DiscoveryConfig>
+    </Instance>
+    <Instance ID="Instanceaf7f408b8c2043c6888fc30dd707fa31" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>Discovery.VirtualMachineNetworkReference</Id>
+        <DisplayName>VMware Virtual Machine Network Reference Relationship Discovery</DisplayName>
+        <Description>PowerShell script that connects to SCOM to discover Virtual Machine Network Reference Relationships</Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;7200&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;01:50&lt;/SyncTime&gt;&lt;ScriptName&gt;Community.VMware.Discovery.VirtualMachineNetworkReference.ps1&lt;/ScriptName&gt;&lt;ScriptBody&gt;$IncludeFileContent/Scripts/VirtualMachineNetworkReferenceDiscovery.ps1$&lt;/ScriptBody&gt;&lt;Parameters&gt;&lt;Parameter&gt;&lt;Name&gt;sourceID&lt;/Name&gt;&lt;Value&gt;$MPElement$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;managedEntityID&lt;/Name&gt;&lt;Value&gt;$Target/Id$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;vCenterServerName&lt;/Name&gt;&lt;Value&gt;$Target/Property[Type="Community.VMware.Class.vCenter"]/vCenterServerName$&lt;/Value&gt;&lt;/Parameter&gt;&lt;/Parameters&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;</DataSourceConfig>
+        <DataSourceRunAs>Community.VMware.SecureReference.RunAsProfile</DataSourceRunAs>
+        <DataSourceType>Windows!Microsoft.Windows.TimedPowerShell.DiscoveryProvider</DataSourceType>
+        <Target>Community.VMware.Class.vCenter</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses />
+        <DiscoveryRelationships>
+          <DiscoveryRelationshipItem>
+            <TypeId>Community.VMware.Relationship.VirtualMachineReferencesNetwork</TypeId>
+            <Properties />
+          </DiscoveryRelationshipItem>
+        </DiscoveryRelationships>
+      </DiscoveryConfig>
+    </Instance>
+    <Instance ID="Instance27b2cbd3cc544d34aeb995183361f354" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.UnitMonitor" Version="1.0.0.0">
+      <UnitMonitorConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <MonitorType>Community.VMware.MonitorType.VirtualMachinePowerState</MonitorType>
+        <MonitorConfig>&lt;IntervalSeconds&gt;120&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;00:00&lt;/SyncTime&gt;&lt;TimeoutSeconds&gt;120&lt;/TimeoutSeconds&gt;&lt;vCenterServerName&gt;$Target/Host/Property[Type='Community.VMware.Class.vCenter']/vCenterServerName$&lt;/vCenterServerName&gt;&lt;VirtualMachineId&gt;$Target/Property[Type='Community.VMware.Class.VirtualMachine']/VirtualMachineId$&lt;/VirtualMachineId&gt;</MonitorConfig>
+        <MonitorOperationalStates>
+          <OperationalState>
+            <OperationalStateId>PoweredOn</OperationalStateId>
+            <OperationalStateDisplayName>PoweredOn</OperationalStateDisplayName>
+            <MonitorTypeStateId>PoweredOn</MonitorTypeStateId>
+            <HealthState>Success</HealthState>
+          </OperationalState>
+          <OperationalState>
+            <OperationalStateId>NotPoweredOn</OperationalStateId>
+            <OperationalStateDisplayName>NotPoweredOn</OperationalStateDisplayName>
+            <MonitorTypeStateId>NotPoweredOn</MonitorTypeStateId>
+            <HealthState>Error</HealthState>
+          </OperationalState>
+        </MonitorOperationalStates>
+        <MonitorRunAs>Community.VMware.SecureReference.RunAsProfile</MonitorRunAs>
+        <ParentMonitor>Health!System.Health.AvailabilityState</ParentMonitor>
+        <Accessibility>Internal</Accessibility>
+        <Id>UnitMonitor.VirtualMachinePowerState</Id>
+        <DisplayName>VMware Virtual Machine Power State</DisplayName>
+        <Description />
+        <Target>Community.VMware.Class.VirtualMachine</Target>
+        <Enabled>true</Enabled>
+        <Category>AvailabilityHealth</Category>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <AlertAutoResolve>true</AlertAutoResolve>
+        <AlertOnState>Error</AlertOnState>
+        <AlertPriority>Normal</AlertPriority>
+        <AlertSeverity>MatchMonitorHealth</AlertSeverity>
+        <AlertName>VMware Virtual Machine Power State</AlertName>
+        <AlertDescription>The current power state of the virtual machine is not powered on, the state is $Data/Context/Property[@Name='PowerState']$.</AlertDescription>
+        <ConfirmDelivery>false</ConfirmDelivery>
+      </UnitMonitorConfig>
+    </Instance>
+  </Instances>
+</TemplateGroup>

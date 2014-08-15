@@ -1,0 +1,22 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <RelationshipTypes>
+        <RelationshipType ID="Community.VMware.Relationship.vCenterHostsCluster" Base="System!System.Hosting" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.vCenter"/>
+          <Target ID="Target" Type="Community.VMware.Class.Cluster"/>
+        </RelationshipType>
+      </RelationshipTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Community.VMware.Relationship.vCenterHostsCluster">
+          <Name>Community - VMware vCenter Hosts Cluster</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

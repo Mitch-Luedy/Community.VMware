@@ -1,0 +1,30 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="Community.VMware.Class.Rollup.HostsAndClusters.Cluster" Base="System!System.LogicalEntity" Accessibility="Public" Abstract="false" Hosted="true" Singleton="false">
+          <Property ID="ClusterName" Type="string" AutoIncrement="false" Key="false" CaseSensitive="false" MaxLength="256" MinLength="0" Required="false" Scale="0" />
+          <Property ID="ClusterId" Type="string" AutoIncrement="false" Key="true" CaseSensitive="false" MaxLength="256" MinLength="0" Required="false" Scale="0" />
+        </ClassType>
+      </ClassTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Community.VMware.Class.Rollup.HostsAndClusters.Cluster">
+          <Name>Community - VMware Rollup - Cluster</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Class.Rollup.HostsAndClusters.Cluster" SubElementID="ClusterName">
+          <Name>Cluster Name</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Class.Rollup.HostsAndClusters.Cluster" SubElementID="ClusterId">
+          <Name>Cluster Id</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

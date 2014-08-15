@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ManagementPack SchemaVersion="2.0" ContentReadable="true" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Manifest>
+    <Identity>
+      <ID>Community.VMware.Unsealed</ID>
+      <Version>1.0.2.0</Version>
+    </Identity>
+    <Name>Community.VMware.Unsealed</Name>
+    <References>
+      <Reference Alias="MSIL">
+        <ID>Microsoft.SystemCenter.InstanceGroup.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="SC">
+        <ID>Microsoft.SystemCenter.Library</ID>
+        <Version>7.0.8427.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Windows">
+        <ID>Microsoft.Windows.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="System">
+        <ID>System.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="VMware">
+        <ID>Community.VMware</ID>
+        <Version>1.0.2.0</Version>
+        <PublicKeyToken>dc7a38fa141a7578</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <Monitoring>
+    <Discoveries>
+      <Discovery ID="Community.VMware.Unsealed.Discovery.Group.UnmonitoredVirtualMachines" Target="VMware!Community.VMware.Class.Group.UnmonitoredVirtualMachines" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal">
+        <Category>Discovery</Category>
+        <DiscoveryTypes>
+          <DiscoveryRelationship TypeID="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities" />
+        </DiscoveryTypes>
+        <DataSource ID="DS" TypeID="SC!Microsoft.SystemCenter.GroupPopulator">
+          <RuleId>$MPElement$</RuleId>
+          <GroupInstanceId>$Target/Id$</GroupInstanceId>
+          <MembershipRules>
+            <MembershipRule>
+              <MonitoringClass>$MPElement[Name="VMware!Community.VMware.Class.VirtualMachine"]$</MonitoringClass>
+              <RelationshipClass>$MPElement[Name="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities"]$</RelationshipClass>
+              <Expression>
+                <RegExExpression>
+                  <ValueExpression>
+                    <Property>$MPElement[Name="VMware!Community.VMware.Class.VirtualMachine"]/VirtualMachineId$</Property>
+                  </ValueExpression>
+                  <Operator>MatchesRegularExpression</Operator>
+                  <Pattern>(DoNotRemoveThisString)</Pattern>
+                </RegExExpression>
+              </Expression>
+            </MembershipRule>
+          </MembershipRules>
+        </DataSource>
+      </Discovery>
+    </Discoveries>
+    <Tasks>
+      <Task ID="Community.VMware.Unsealed.Task.AddVirtualMachineToUnmonitoredGroup" Accessibility="Internal" Target="VMware!Community.VMware.Class.VirtualMachine" Enabled="true" Timeout="300" Remotable="true">
+        <Category>Operations</Category>
+        <ProbeAction ID="Probe" TypeID="Windows!Microsoft.Windows.PowerShellProbe">
+          <ScriptName>AddVirtualMachineToUnmonitoredGroup.ps1</ScriptName>
+          <ScriptBody><![CDATA[Param($VirtualMachineId)
+
+$ScriptName = 'Community.VMware.Unsealed.Task.AddVirtualMachineToUnmonitoredGroup.ps1'
+$api = new-object -comObject 'MOM.ScriptAPI'
+
+Import-Module OperationsManager
+New-SCOMManagementGroupConnection 'localhost'
+
+$MGconn = Get-SCOMManagementGroupConnection | Where {$_.IsActive -eq $true}
+
+If(!$MGconn){
+	$api.LogScriptEvent($ScriptName,1985,2,"Unable to connect to the local management group")
+	exit
+}
+
+$Discovery = Get-SCOMDiscovery -Name 'Community.VMware.Unsealed.Discovery.Group.UnmonitoredVirtualMachines'
+
+If ($Discovery){
+
+	IF($Discovery.DataSource.Configuration -match '<Pattern>(?<content>.*)</Pattern>'){
+		$NewConfig = $Discovery.DataSource.Configuration -replace '<Pattern>(?<content>.*)</Pattern>', ('<Pattern>'+($Matches['content']).Insert(1,($VirtualMachineId+'|')) + '</Pattern>')
+		$Discovery.DataSource.set_Configuration($NewConfig)
+		$Discovery.Status = [Microsoft.EnterpriseManagement.Configuration.ManagementPackElementStatus]::PendingUpdate
+		$MP = $Discovery.GetManagementPack()
+		$MP.AcceptChanges()
+	}
+	Else {Write-Host 'Failed'}
+}
+Else {Write-Host 'Failed'}]]></ScriptBody>
+          <SnapIns />
+          <Parameters>
+            <Parameter>
+              <Name>VirtualMachineId</Name>
+              <Value>$Target/Property[Type="VMware!Community.VMware.Class.VirtualMachine"]/VirtualMachineId$</Value>
+            </Parameter>
+          </Parameters>
+          <TimeoutSeconds>300</TimeoutSeconds>
+          <StrictErrorHandling>true</StrictErrorHandling>
+        </ProbeAction>
+      </Task>
+    </Tasks>
+  </Monitoring>
+  <Presentation>
+    <Folders>
+      <Folder ID="Community.VMware.Unsealed.Folder.CustomViews" Accessibility="Public" ParentFolder="VMware!Community.VMware.Folder.Root" />
+    </Folders>
+  </Presentation>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Community.VMware.Unsealed.Discovery.Group.UnmonitoredVirtualMachines">
+          <Name>Community - VMware Unmonitored Virtual Machines Group Discovery</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Unsealed.Task.AddVirtualMachineToUnmonitoredGroup">
+          <Name>Stop Monitoring this Virtual Machine</Name>
+          <Description>Adds the selected Virtual Machine to the Community - VMware Unmonitored Virtual Machines Group Discovery configuration</Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Unsealed.Folder.CustomViews">
+          <Name>2. Custom Views</Name>
+          <Description>Community VMware Custom Views Folder</Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Unsealed">
+          <Name>Community - VMware</Name>
+          <Description>Community developed monitoring for VMware</Description>
+        </DisplayString>
+      </DisplayStrings>
+      <KnowledgeArticles></KnowledgeArticles>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPack>

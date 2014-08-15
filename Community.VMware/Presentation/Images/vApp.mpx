@@ -1,0 +1,16 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Categories>
+    <Category ID="Community.VMware.Image.vApp.Diagram.Category" Target="Community.VMware.Image.vApp.Diagram" Value="System!System.Internal.ManagementPack.Images.DiagramIcon" />
+    <Category ID="Community.VMware.Image.vApp.Small.Category" Target="Community.VMware.Image.vApp.Small" Value="System!System.Internal.ManagementPack.Images.u16x16Icon" />
+  </Categories>
+  <Presentation>
+    <ImageReferences>
+      <ImageReference ElementID="Community.VMware.Class.vApp" ImageID="Community.VMware.Image.vApp.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.vApp" ImageID="Community.VMware.Image.vApp.Small"/>
+    </ImageReferences>
+  </Presentation>
+  <Resources>
+    <Image ID="Community.VMware.Image.vApp.Diagram" FileName="vApp_80.png" Accessibility="Public" HasNullStream="false" Comment="Community - VMware vApp Image Diagram" />
+    <Image ID="Community.VMware.Image.vApp.Small" FileName="vApp_16.png" Accessibility="Public" HasNullStream="false" Comment="Community - VMware vApp Image Small" />
+  </Resources>
+</ManagementPackFragment>

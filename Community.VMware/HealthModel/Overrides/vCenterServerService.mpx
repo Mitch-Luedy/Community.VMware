@@ -1,0 +1,9 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Monitoring>
+    <Overrides>
+      <MonitorPropertyOverride ID="Community.VMware.Override.vCenterServerServiceStatusAlertPriority" Monitor="MSNL!Microsoft.SystemCenter.NTService.ServiceStateMonitor" Context="Community.VMware.Class.vCenterServerService"  Property="AlertPriority" Enforced="false" >
+        <Value>High</Value>
+      </MonitorPropertyOverride>
+    </Overrides>
+  </Monitoring>
+</ManagementPackFragment>

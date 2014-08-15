@@ -1,0 +1,63 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <ModuleTypes>
+      <DataSourceModuleType Accessibility="Internal" ID="Community.VMware.DataSource.DatastorePerfOptimized">
+        <Configuration>
+          <xsd:element minOccurs="1" name="IntervalSeconds" type="xsd:integer" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+          <xsd:element minOccurs="1" name="SyncTime" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+          <xsd:element minOccurs="1" name="TimeoutSeconds" type="xsd:integer" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+          <xsd:element minOccurs="1" name="vCenterServerName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+          <xsd:element minOccurs="1" name="DatastoreId" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+          <xsd:element minOccurs="1" name="DatastoreName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+          <xsd:element minOccurs="1" name="CounterName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+          <xsd:element minOccurs="1" name="PerfValueName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="Tolerance" type="xsd:double" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ToleranceType">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="Absolute" />
+                <xsd:enumeration value="Percentage" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element minOccurs="1" maxOccurs="1" name="MaximumSampleSeparation" type="xsd:unsignedInt" />
+        </Configuration>
+        <OverrideableParameters>
+          <OverrideableParameter ID="IntervalSeconds" Selector="$Config/IntervalSeconds$" ParameterType="int" />
+          <OverrideableParameter ID="SyncTime" Selector="$Config/SyncTime$" ParameterType="string" />
+          <OverrideableParameter ID="TimeoutSeconds" Selector="$Config/TimeoutSeconds$" ParameterType="int" />
+          <OverrideableParameter ID="Tolerance" ParameterType="double" Selector="$Config/Tolerance$" />
+          <OverrideableParameter ID="MaximumSampleSeparation" ParameterType="int" Selector="$Config/MaximumSampleSeparation$" />
+        </OverrideableParameters>
+        <ModuleImplementation>
+          <Composite>
+            <MemberModules>
+              <DataSource TypeID="Community.VMware.DataSource.DatastorePerf" ID="DatastorePerfDS">
+                <IntervalSeconds>$Config/IntervalSeconds$</IntervalSeconds>
+                <SyncTime>$Config/SyncTime$</SyncTime>
+                <TimeoutSeconds>$Config/TimeoutSeconds$</TimeoutSeconds>
+                <vCenterServerName>$Config/vCenterServerName$</vCenterServerName>
+                <DatastoreId>$Config/DatastoreId$</DatastoreId>
+                <DatastoreName>$Config/DatastoreName$</DatastoreName>
+                <CounterName>$Config/CounterName$</CounterName>
+                <PerfValueName>$Config/PerfValueName$</PerfValueName>
+              </DataSource>
+              <ConditionDetection TypeID="Perf!System.Performance.OptimizedCollectionFilter" ID="OptimizedCollectionFilter">
+                <Tolerance>$Config/Tolerance$</Tolerance>
+                <ToleranceType>$Config/ToleranceType$</ToleranceType>
+                <MaximumSampleSeparation>$Config/MaximumSampleSeparation$</MaximumSampleSeparation>
+                <SamplingPeriodInSeconds>$Config/IntervalSeconds$</SamplingPeriodInSeconds>
+              </ConditionDetection>
+            </MemberModules>
+            <Composition>
+              <Node ID="OptimizedCollectionFilter">
+                <Node ID="DatastorePerfDS" />
+              </Node>
+            </Composition>
+          </Composite>
+        </ModuleImplementation>
+        <OutputType>Perf!System.Performance.Data</OutputType>
+      </DataSourceModuleType>
+    </ModuleTypes>
+  </TypeDefinitions>
+</ManagementPackFragment>

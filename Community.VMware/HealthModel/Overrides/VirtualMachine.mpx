@@ -1,0 +1,9 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Monitoring>
+    <Overrides>
+      <MonitorPropertyOverride Property="Enabled" Monitor="Community.VMware.UnitMonitor.VirtualMachinePowerState" Context="Community.VMware.Class.Group.UnmonitoredVirtualMachines" Enforced="false" ID="Community.VMware.Override.VirtualMachinePowerStateDisabler">
+        <Value>false</Value>
+      </MonitorPropertyOverride>
+    </Overrides>
+  </Monitoring>
+</ManagementPackFragment>

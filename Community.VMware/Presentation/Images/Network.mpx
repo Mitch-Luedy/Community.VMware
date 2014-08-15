@@ -1,0 +1,16 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Categories>
+    <Category ID="Community.VMware.Image.Network.Diagram.Category" Target="Community.VMware.Image.Network.Diagram" Value="System!System.Internal.ManagementPack.Images.DiagramIcon" />
+    <Category ID="Community.VMware.Image.Network.Small.Category" Target="Community.VMware.Image.Network.Small" Value="System!System.Internal.ManagementPack.Images.u16x16Icon" />
+  </Categories>
+  <Presentation>
+    <ImageReferences>
+      <ImageReference ElementID="Community.VMware.Class.Network" ImageID="Community.VMware.Image.Network.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Network" ImageID="Community.VMware.Image.Network.Small"/>
+    </ImageReferences>
+  </Presentation>
+  <Resources>
+    <Image ID="Community.VMware.Image.Network.Diagram" FileName="Network_80.png" Accessibility="Public" HasNullStream="false" Comment="Community - VMware Network Image Diagram" />
+    <Image ID="Community.VMware.Image.Network.Small" FileName="Network_16.png" Accessibility="Public" HasNullStream="false" Comment="Community - VMware Network Image Small" />
+  </Resources>
+</ManagementPackFragment>

@@ -1,0 +1,594 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{1d3123d0-5809-4752-a9b3-1d93cfebc436}</ProjectGuid>
+    <RootNamespace>Community.VMware</RootNamespace>
+    <Name>Community.VMware</Name>
+    <ManagementPackName>Community.VMware</ManagementPackName>
+    <Version>1.0.2.0</Version>
+    <MpFrameworkVersion>v7.0</MpFrameworkVersion>
+    <MpFrameworkProfile>OM</MpFrameworkProfile>
+    <ProductVersion>1.1.0.0</ProductVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <GenerateSealed>True</GenerateSealed>
+    <Company>Community</Company>
+    <Copyright>Community</Copyright>
+    <DelaySigning>False</DelaySigning>
+    <AssemblyOriginatorKeyFile>KeyFile\Community.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <DelaySigning>false</DelaySigning>
+    <Company>MyCompany</Company>
+    <Copyright>Copyright (c) MyCompany. All rights reserved.</Copyright>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="HealthModel" />
+    <Folder Include="HealthModel\Groups" />
+    <Folder Include="HealthModel\Rollups" />
+    <Folder Include="HealthModel\SecureReferences" />
+    <Folder Include="HealthModel\Overrides" />
+    <Folder Include="TypeLibrary" />
+    <Folder Include="Presentation\Images" />
+    <Folder Include="Scripts" />
+    <Folder Include="ServiceModel" />
+    <Folder Include="Presentation" />
+    <Folder Include="ServiceModel\Classes" />
+    <Folder Include="ServiceModel\Classes\Groups" />
+    <Folder Include="ServiceModel\Classes\Rollups" />
+    <Folder Include="ServiceModel\Relationships" />
+    <Folder Include="ServiceModel\Relationships\Rollups" />
+    <Folder Include="TypeLibrary\DataSources" />
+    <Folder Include="TypeLibrary\MonitorTypes" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HealthModel\Cluster.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>HealthModel\Cluster.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="HealthModel\Datacenter.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>HealthModel\Datacenter.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="HealthModel\Datastore.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>HealthModel\Datastore.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="HealthModel\Groups\AllObjects.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>HealthModel\Groups\AllObjects.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="HealthModel\Groups\ClustersWithoutHA.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>HealthModel\Groups\ClustersWithoutHA.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="HealthModel\Groups\RollupvCenter.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>HealthModel\Groups\RollupvCenter.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="HealthModel\Host.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>HealthModel\Host.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="HealthModel\Network.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>HealthModel\Network.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="HealthModel\Overrides\Cluster.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HealthModel\Overrides\vCenterServerService.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HealthModel\Overrides\VirtualMachine.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HealthModel\Rollups\HostsAndClusters.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>HealthModel\Rollups\HostsAndClusters.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="HealthModel\SecureReferences\RunAsProfile.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HealthModel\vApp.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>HealthModel\vApp.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="HealthModel\vCenter.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>HealthModel\vCenter.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="HealthModel\vCenterServerService.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>HealthModel\vCenterServerService.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="HealthModel\VirtualMachine.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>HealthModel\VirtualMachine.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Folders.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presentation\Images\Cluster.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presentation\Images\Datacenter.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presentation\Images\Datastore.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presentation\Images\Host.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presentation\Images\Network.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presentation\Images\Rollups.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presentation\Images\vApp.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presentation\Images\vCenter.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presentation\Images\VirtualMachine.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presentation\ManagementPack.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>Presentation\Views.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Cluster.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Datacenter.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Datastore.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Groups\AllObjects.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Groups\ClustersWithoutHA.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Groups\RollupvCenter.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Groups\UnmonitoredVirtualMachines.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Host.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Network.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\ResourcePool.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Rollups\0_0_0_0_0_vCenter.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Rollups\1_1_0_0_0_Datacenter.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Rollups\1_1_1_0_0_AllClusers.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Rollups\1_1_1_1_4_ClustervApps.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Rollups\1_1_2_0_0_AllStandaloneHosts.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Rollups\1_1_1_1_0_Cluster.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Rollups\1_1_1_1_3_ClusterNetworks.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Rollups\1_1_1_1_1_ClusterVirtualMachines.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Rollups\1_0_0_0_0_HostsAndClusters.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Rollups\1_1_1_1_2_ClusterDatastores.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Rollups\1_1_2_1_0_StandaloneHost.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Rollups\1_1_2_1_1_StandaloneHostVirtualMachines.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Rollups\1_1_2_1_2_StandaloneHostDatastores.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Rollups\1_1_2_1_3_StandaloneHostNetworks.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\Rollups\1_1_2_1_4_StandaloneHostvApps.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\vApp.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\vCenter.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\vCenterServerService.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Classes\VirtualMachine.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\ClusterContainsHost.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\ClusterReferencesDatacenter.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\HostReferencesDatacenter.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\HostReferencesDatastore.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\HostReferencesNetwork.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\ResourcePoolHostsvCenter.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\Rollups\HostsAndClusters.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\vAppReferencesCluster.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\vAppReferencesHost.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\vCenterHostsCluster.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\vCenterHostsDatacenter.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\vCenterHostsDatastore.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\vCenterHostsHost.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\vCenterHostsNetwork.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\vCenterHostsvApp.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\vCenterHostsVirtualMachine.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\VirtualMachineReferencesDatastore.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\VirtualMachineReferencesHost.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceModel\Relationships\VirtualMachineReferencesNetwork.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\ClusterDatastorePerf.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\ClusterDatastorePerfOptimized.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\ClusterPerf.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\ClusterPerfOptimized.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\ClusterState.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\DatacenterDatastorePerf.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\DatacenterDatastorePerfOptimized.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\DatastorePerf.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\DatastorePerfOptimized.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\DatastoreState.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\HostDatastorePerf.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\HostDatastorePerfOptimized.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\HostPerf.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\HostPerfOptimized.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\HostState.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\NetworkState.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\vAppState.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\DataSources\VirtualMachineState.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\MonitorTypes\ClusterCurrentFailoverLevelBelowThreshold.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\MonitorTypes\ClusterDatastorePerfBelowThreshold.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\MonitorTypes\ClusterPerfAboveThreshold.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\MonitorTypes\DatacenterDatastorePerfBelowThreshold.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\MonitorTypes\DatastorePerfBelowThreshold.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\MonitorTypes\DatastoreState.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\MonitorTypes\HostDatastorePerfBelowThreshold.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\MonitorTypes\HostPerfAboveThreshold.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\MonitorTypes\HostPowerState.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\MonitorTypes\NetworkOverallStatus.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\MonitorTypes\vAppStartedState.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeLibrary\MonitorTypes\VirtualMachinePowerState.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HealthModel\Cluster.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <Content Include="HealthModel\Datacenter.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <Content Include="HealthModel\Datastore.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <Content Include="HealthModel\Groups\AllObjects.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <Content Include="HealthModel\Groups\ClustersWithoutHA.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <Content Include="HealthModel\Groups\RollupvCenter.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <Content Include="HealthModel\Host.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <Content Include="HealthModel\Network.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <Content Include="HealthModel\Rollups\HostsAndClusters.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <Content Include="HealthModel\vApp.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <Content Include="HealthModel\vCenter.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <Content Include="HealthModel\vCenterServerService.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <Content Include="HealthModel\VirtualMachine.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <EmbeddedResource Include="Presentation\Images\vApp_16.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Images\vApp_80.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <Content Include="Presentation\Views.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <EmbeddedResource Include="Presentation\Images\Cluster_16.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Images\Cluster_80.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Images\Datacenter_16.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Images\Datacenter_80.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Images\Datastore_16.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Images\Datastore_80.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Images\Host_16.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Images\Host_80.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Images\Network_16.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Images\Network_80.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Images\vCenter_16.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Images\vCenter_80.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Images\VirtualMachine_16.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Images\VirtualMachine_80.png">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\ClusterState.ps1" />
+    <EmbeddedResource Include="Scripts\ClusterDatacenterReferenceDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\ClusterDatastorePerf.ps1" />
+    <EmbeddedResource Include="Scripts\ClusterHostContainmentDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\ClusterPerf.ps1" />
+    <EmbeddedResource Include="Scripts\DatacenterDatastorePerf.ps1" />
+    <EmbeddedResource Include="Scripts\DatastorePerf.ps1" />
+    <EmbeddedResource Include="Scripts\DatastoreState.ps1" />
+    <EmbeddedResource Include="Scripts\HostDatacenterReferenceDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\HostDatastorePerf.ps1" />
+    <EmbeddedResource Include="Scripts\HostDatastoreReferenceDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\HostNetworkReferenceDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\HostPerf.ps1" />
+    <EmbeddedResource Include="Scripts\HostState.ps1" />
+    <EmbeddedResource Include="Scripts\NetworkState.ps1" />
+    <EmbeddedResource Include="Scripts\RollupHostsAndClustersDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\vAppDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\vAppHostAndClusterReferenceDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\vAppState.ps1" />
+    <EmbeddedResource Include="Scripts\VirtualMachineDatastoreReferenceDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\VirtualMachineNetworkReferenceDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\VirtualMachineHostReferenceDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\VirtualMachineState.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\ClusterDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\DatacenterDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\DatastoreDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\HostDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\NetworkDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\vCenterDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\VirtualMachineComputerRelationshipDiscovery.ps1" />
+    <EmbeddedResource Include="Scripts\VirtualMachineDiscovery.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ManagementPackReference Include="Microsoft.SystemCenter.DataWarehouse.Library">
+      <HintPath>C:\Program Files\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\Microsoft.SystemCenter.DataWarehouse.Library.mp</HintPath>
+      <Alias>MSDL</Alias>
+      <MinVersion>7.0.8427.0</MinVersion>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.InstanceGroup.Library">
+      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\Microsoft.SystemCenter.InstanceGroup.Library.mp</HintPath>
+      <Alias>MSIL</Alias>
+      <MinVersion>7.5.8501.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Library">
+      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\Microsoft.SystemCenter.Library.mp</HintPath>
+      <Alias>SC</Alias>
+      <MinVersion>7.0.8427.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.NTService.Library">
+      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\Microsoft.SystemCenter.NTService.Library.mp</HintPath>
+      <Alias>MSNL</Alias>
+      <MinVersion>7.0.8560.0</MinVersion>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Visualization.Library">
+      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\Microsoft.SystemCenter.Visualization.Library.mp</HintPath>
+      <Alias>Visualization</Alias>
+      <MinVersion>7.0.8560.0</MinVersion>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.Unix.Library">
+      <HintPath>C:\Users\mluedy2\Desktop\community-vmware\Community.VMware\References\Microsoft.Unix.Library.mp</HintPath>
+      <Alias>Unix</Alias>
+      <MinVersion>7.4.3507.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.Windows.Library">
+      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\Microsoft.Windows.Library.mp</HintPath>
+      <Alias>Windows</Alias>
+      <MinVersion>7.5.8501.0</MinVersion>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.Hardware.Library">
+      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\System.Hardware.Library.mp</HintPath>
+      <Alias>SHL</Alias>
+      <MinVersion>7.0.8427.0</MinVersion>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.Health.Library">
+      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\System.Health.Library.mp</HintPath>
+      <Alias>Health</Alias>
+      <MinVersion>7.0.8427.0</MinVersion>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.Library">
+      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\System.Library.mp</HintPath>
+      <Alias>System</Alias>
+      <MinVersion>7.5.8501.0</MinVersion>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.Performance.Library">
+      <HintPath>C:\Program Files\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\System.Performance.Library.mp</HintPath>
+      <Alias>Perf</Alias>
+      <MinVersion>7.0.8427.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.Virtualization.Library">
+      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\System.Virtualization.Library.mp</HintPath>
+      <Alias>SVL</Alias>
+      <MinVersion>7.0.8427.0</MinVersion>
+    </ManagementPackReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VSAC\Microsoft.SystemCenter.OperationsManager.targets" />
+</Project>

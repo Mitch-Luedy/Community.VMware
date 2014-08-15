@@ -1,0 +1,16 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Categories>
+    <Category ID="Community.VMware.Image.Datastore.Diagram.Category" Target="Community.VMware.Image.Datastore.Diagram" Value="System!System.Internal.ManagementPack.Images.DiagramIcon" />
+    <Category ID="Community.VMware.Image.Datastore.Small.Category" Target="Community.VMware.Image.Datastore.Small" Value="System!System.Internal.ManagementPack.Images.u16x16Icon" />
+  </Categories>
+  <Presentation>
+    <ImageReferences>
+      <ImageReference ElementID="Community.VMware.Class.Datastore" ImageID="Community.VMware.Image.Datastore.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Datastore" ImageID="Community.VMware.Image.Datastore.Small"/>
+    </ImageReferences>
+  </Presentation>
+  <Resources>
+    <Image ID="Community.VMware.Image.Datastore.Diagram" FileName="Datastore_80.png" Accessibility="Public" HasNullStream="false" Comment="Community - VMware Datastore Image Diagram" />
+    <Image ID="Community.VMware.Image.Datastore.Small" FileName="Datastore_16.png" Accessibility="Public" HasNullStream="false" Comment="Community - VMware Datastore Image Small" />
+  </Resources>
+</ManagementPackFragment>

@@ -1,0 +1,28 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="Community.VMware.Class.Datacenter" Base="System!System.Entity" Accessibility="Public" Abstract="false" Hosted="true" Singleton="false">
+          <Property ID="DatacenterName" Type="string" AutoIncrement="false" Key="false" CaseSensitive="false" MaxLength="256" MinLength="0" Required="false" Scale="0" />
+          <Property ID="DatacenterId" Type="string" AutoIncrement="false" Key="true" CaseSensitive="false" MaxLength="256" MinLength="0" Required="false" Scale="0" />
+        </ClassType>
+      </ClassTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Community.VMware.Class.Datacenter">
+          <Name>Community - VMware - Datacenter</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Class.Datacenter" SubElementID="DatacenterName">
+          <Name>Datacenter Name</Name>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Class.Datacenter" SubElementID="DatacenterId">
+          <Name>Datacenter Id</Name>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

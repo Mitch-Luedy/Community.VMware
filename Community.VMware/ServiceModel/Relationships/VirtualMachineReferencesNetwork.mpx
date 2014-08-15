@@ -1,0 +1,22 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <RelationshipTypes>
+        <RelationshipType ID="Community.VMware.Relationship.VirtualMachineReferencesNetwork" Base="System!System.Reference" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.VirtualMachine"/>
+          <Target ID="Target" Type="Community.VMware.Class.Network"/>
+        </RelationshipType>
+      </RelationshipTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Community.VMware.Relationship.VirtualMachineReferencesNetwork">
+          <Name>Community - VMware Virtual Machine References Network</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

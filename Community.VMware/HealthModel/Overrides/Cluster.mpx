@@ -1,0 +1,15 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Monitoring>
+    <Overrides>
+      <MonitorPropertyOverride ID="Community.VMware.Override.DisableClusterCurrentFailoverLevelMonitor" Property="Enabled" Monitor="Community.VMware.UnitMonitor.ClusterCurrentFailoverLevel" Context="Community.VMware.Class.Group.ClustersWithoutHA" Enforced="false">
+        <Value>false</Value>
+      </MonitorPropertyOverride>
+      <MonitorPropertyOverride Property="Algorithm" Monitor="Community.VMware.DependencyMonitor.ClusterDependsOnHostAvailability" Context="Community.VMware.Class.Group.ClustersWithoutHA" Enforced="false" ID="Community.VMware.Override.ClusterDependsOnHostAvailabilityAlgorithm">
+        <Value>WorstOf</Value>
+      </MonitorPropertyOverride>
+      <MonitorPropertyOverride Property="Algorithm" Monitor="Community.VMware.DependencyMonitor.ClusterDependsOnHostPerformance" Context="Community.VMware.Class.Group.ClustersWithoutHA" Enforced="false" ID="Community.VMware.Override.ClusterDependsOnHostPerformanceAlgorithm">
+        <Value>WorstOf</Value>
+      </MonitorPropertyOverride>
+    </Overrides>
+  </Monitoring>
+</ManagementPackFragment>

@@ -1,0 +1,210 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <RelationshipTypes>
+        <!--Rollup to Rollup Relationships-->
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.vCenterHostsHostsAndClusters" Base="System!System.Hosting" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.vCenter"/>
+          <Target ID="Target" Type="Community.VMware.Class.Rollup.HostsAndClusters"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClustersHostsDatacenter" Base="System!System.Hosting" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters"/>
+          <Target ID="Target" Type="Community.VMware.Class.Rollup.HostsAndClusters.Datacenter"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.DatacenterHostsAllClusters" Base="System!System.Hosting" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.Datacenter"/>
+          <Target ID="Target" Type="Community.VMware.Class.Rollup.HostsAndClusters.AllClusters"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.DatacenterHostsAllStandaloneHosts" Base="System!System.Hosting" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.Datacenter"/>
+          <Target ID="Target" Type="Community.VMware.Class.Rollup.HostsAndClusters.AllStandaloneHosts"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.AllClustersHostsCluster" Base="System!System.Hosting" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.AllClusters"/>
+          <Target ID="Target" Type="Community.VMware.Class.Rollup.HostsAndClusters.Cluster"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClusterHostsVirtualMachines" Base="System!System.Hosting" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.Cluster"/>
+          <Target ID="Target" Type="Community.VMware.Class.Rollup.HostsAndClusters.ClusterVirtualMachines"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClusterHostsDatastores" Base="System!System.Hosting" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.Cluster"/>
+          <Target ID="Target" Type="Community.VMware.Class.Rollup.HostsAndClusters.ClusterDatastores"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClusterHostsNetworks" Base="System!System.Hosting" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.Cluster"/>
+          <Target ID="Target" Type="Community.VMware.Class.Rollup.HostsAndClusters.ClusterNetworks"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClusterHostsvApps" Base="System!System.Hosting" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.Cluster"/>
+          <Target ID="Target" Type="Community.VMware.Class.Rollup.HostsAndClusters.ClustervApps"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.AllStandaloneHostsHostsStandaloneHost" Base="System!System.Hosting" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.AllStandaloneHosts"/>
+          <Target ID="Target" Type="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHost"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostHostsVirtualMachines" Base="System!System.Hosting" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHost"/>
+          <Target ID="Target" Type="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHostVirtualMachines"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostHostsDatastores" Base="System!System.Hosting" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHost"/>
+          <Target ID="Target" Type="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHostDatastores"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostHostsNetworks" Base="System!System.Hosting" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHost"/>
+          <Target ID="Target" Type="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHostNetworks"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostHostsvApps" Base="System!System.Hosting" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHost"/>
+          <Target ID="Target" Type="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHostvApps"/>
+        </RelationshipType>
+        <!--Rollup Contains VM Object Relationships-->
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClusterContainsCluster" Base="System!System.Containment" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.Cluster"/>
+          <Target ID="Target" Type="Community.VMware.Class.Cluster"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClusterVirtualMachinesContainsVirtualMachine" Base="System!System.Containment" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.ClusterVirtualMachines"/>
+          <Target ID="Target" Type="Community.VMware.Class.VirtualMachine"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClusterDatastoresContainsDatastore" Base="System!System.Containment" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.ClusterDatastores"/>
+          <Target ID="Target" Type="Community.VMware.Class.Datastore"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClusterNetworksContainsNetwork" Base="System!System.Containment" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.ClusterNetworks"/>
+          <Target ID="Target" Type="Community.VMware.Class.Network"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClustervAppsContainsvApp" Base="System!System.Containment" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.ClustervApps"/>
+          <Target ID="Target" Type="Community.VMware.Class.vApp"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostContainsHost" Base="System!System.Containment" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHost"/>
+          <Target ID="Target" Type="Community.VMware.Class.Host"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostVirtualMachinesContainsVirtualMachine" Base="System!System.Containment" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHostVirtualMachines"/>
+          <Target ID="Target" Type="Community.VMware.Class.VirtualMachine"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostDatastoresContainsDatastore" Base="System!System.Containment" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHostDatastores"/>
+          <Target ID="Target" Type="Community.VMware.Class.Datastore"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostNetworksContainsNetwork" Base="System!System.Containment" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHostNetworks"/>
+          <Target ID="Target" Type="Community.VMware.Class.Network"/>
+        </RelationshipType>
+        <RelationshipType ID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostvAppsContainsvApp" Base="System!System.Containment" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHostvApps"/>
+          <Target ID="Target" Type="Community.VMware.Class.vApp"/>
+        </RelationshipType>
+      </RelationshipTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <!--Rollup to Rollup Relationships-->
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.vCenterHostsHostsAndClusters">
+          <Name>Community - VMware Rollup - vCenter Hosts Hosts and Clusters</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClustersHostsDatacenter">
+          <Name>Community - VMware Rollup - Hosts and Clusters Hosts Hosts and Clusters Datacenter</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.DatacenterHostsAllClusters">
+          <Name>Community - VMware Rollup - Hosts and Clusters Datacenter Hosts All Clusters</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.DatacenterHostsAllStandaloneHosts">
+          <Name>Community - VMware Rollup - Hosts and Clusters Datacenter Hosts All Standalone Hosts</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.AllClustersHostsCluster">
+          <Name>Community - VMware Rollup - All Clusters Hosts Cluster</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClusterHostsVirtualMachines">
+          <Name>Community - VMware Rollup - Cluster Hosts Virtual Machines</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClusterHostsDatastores">
+          <Name>Community - VMware Rollup - Cluster Hosts Datastores</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClusterHostsNetworks">
+          <Name>Community - VMware Rollup - Cluster Hosts Networks</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClusterHostsvApps">
+          <Name>Community - VMware Rollup - Cluster Hosts vApps</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.AllStandaloneHostsHostsStandaloneHost">
+          <Name>Community - VMware Rollup - All Standalone Hosts Hosts Standalone Host</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostHostsVirtualMachines">
+          <Name>Community - VMware Rollup - Standalone Host Hosts Virtual Machines</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostHostsDatastores">
+          <Name>Community - VMware Rollup - Standalone Host Hosts Networks</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostHostsNetworks">
+          <Name>Community - VMware Rollup - Standalone Host Hosts Datastores</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostHostsvApps">
+          <Name>Community - VMware Rollup - Standalone Host Hosts vApp</Name>
+          <Description></Description>
+        </DisplayString>
+        <!--Rollup Contains VM Object Relationships-->
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClusterContainsCluster">
+          <Name>Community - VMware Rollup - Cluster Rollup Contains Cluster</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClusterVirtualMachinesContainsVirtualMachine">
+          <Name>Community - VMware Rollup - Cluster Virtual Machines Contains Virtual Machine</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClusterDatastoresContainsDatastore">
+          <Name>Community - VMware Rollup - Cluster Datastores Contains Datastore</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClusterNetworksContainsNetwork">
+          <Name>Community - VMware Rollup - Cluster Networks Contains Network</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.ClustervAppsContainsvApp">
+          <Name>Community - VMware Rollup - Cluster vApps Contains vApp</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostContainsHost">
+          <Name>Community - VMware Rollup - Standalone Host Rollup Contains Host</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostVirtualMachinesContainsVirtualMachine">
+          <Name>Community - VMware Rollup - Standalone Host Virtual Machines Contains Virtual Machine</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostDatastoresContainsDatastore">
+          <Name>Community - VMware Rollup - Standalone Host Datastores Contains Datastore</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostNetworksContainsNetwork">
+          <Name>Community - VMware Rollup - Standalone Host Networks Contains Network</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Relationship.Rollup.HostsAndClusters.StandaloneHostvAppsContainsvApp">
+          <Name>Community - VMware Rollup - Standalone Host vApps Contains vApp</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

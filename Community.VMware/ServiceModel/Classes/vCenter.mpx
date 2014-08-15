@@ -1,0 +1,24 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="Community.VMware.Class.vCenter" Base="System!System.Entity" Accessibility="Public" Abstract="false" Hosted="true" Singleton="false">
+          <Property ID="vCenterServerName" Type="string" AutoIncrement="false" Key="true" CaseSensitive="false" MaxLength="256" MinLength="0" Required="false" Scale="0" />
+        </ClassType>
+      </ClassTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Community.VMware.Class.vCenter">
+          <Name>Community - VMware - vCenter</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Community.VMware.Class.vCenter" SubElementID="vCenterServerName">
+          <Name>vCenter Server Name</Name>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

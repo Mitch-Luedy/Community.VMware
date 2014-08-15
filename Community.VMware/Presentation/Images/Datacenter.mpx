@@ -1,0 +1,16 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Categories>
+    <Category ID="Community.VMware.Image.Datacenter.Diagram.Category" Target="Community.VMware.Image.Datacenter.Diagram" Value="System!System.Internal.ManagementPack.Images.DiagramIcon" />
+    <Category ID="Community.VMware.Image.Datacenter.Small.Category" Target="Community.VMware.Image.Datacenter.Small" Value="System!System.Internal.ManagementPack.Images.u16x16Icon" />
+  </Categories>
+  <Presentation>
+    <ImageReferences>
+      <ImageReference ElementID="Community.VMware.Class.Datacenter" ImageID="Community.VMware.Image.Datacenter.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Datacenter" ImageID="Community.VMware.Image.Datacenter.Small"/>
+    </ImageReferences>
+  </Presentation>
+  <Resources>
+    <Image ID="Community.VMware.Image.Datacenter.Diagram" FileName="Datacenter_80.png" Accessibility="Public" HasNullStream="false" Comment="Community - VMware Datacenter Image Diagram" />
+    <Image ID="Community.VMware.Image.Datacenter.Small" FileName="Datacenter_16.png" Accessibility="Public" HasNullStream="false" Comment="Community - VMware Datacenter Image Small" />
+  </Resources>
+</ManagementPackFragment>

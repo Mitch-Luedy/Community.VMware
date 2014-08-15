@@ -1,0 +1,29 @@
+<TemplateGroup>
+  <Instances>
+    <Instance ID="Instance16824211b9124605b187749a6a08cc9a" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>Discovery.vCenterServerService</Id>
+        <DisplayName>VMware vCenter Server Service Discovery</DisplayName>
+        <Description>Discovers the vpxd service on Windows Servers</Description>
+        <Comment />
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceComment />
+        <DataSourceConfig>&lt;ComputerName&gt;$Target/Property[Type="Windows!Microsoft.Windows.Computer"]/NetworkName$&lt;/ComputerName&gt;&lt;ServiceName&gt;vpxd&lt;/ServiceName&gt;&lt;Frequency&gt;7200&lt;/Frequency&gt;&lt;ClassId&gt;$MPElement[Name="Community.VMware.Class.vCenterServerService"]$&lt;/ClassId&gt;&lt;InstanceSettings&gt;&lt;Settings&gt;&lt;Setting&gt;&lt;Name&gt;$MPElement[Name="Windows!Microsoft.Windows.Computer"]/PrincipalName$&lt;/Name&gt;&lt;Value&gt;$Target/Property[Type="Windows!Microsoft.Windows.Computer"]/PrincipalName$&lt;/Value&gt;&lt;/Setting&gt;&lt;Setting&gt;&lt;Name&gt;$MPElement[Name="MSNL!Microsoft.SystemCenter.NTService"]/ServiceName$&lt;/Name&gt;&lt;Value&gt;$Data/Property[@Name='Name']$&lt;/Value&gt;&lt;/Setting&gt;&lt;Setting&gt;&lt;Name&gt;$MPElement[Name="MSNL!Microsoft.SystemCenter.NTService"]/ServiceProcessName$&lt;/Name&gt;&lt;Value&gt;$Data/Property[@Name='BinaryPathName']$&lt;/Value&gt;&lt;/Setting&gt;&lt;Setting&gt;&lt;Name&gt;$MPElement[Name="MSNL!Microsoft.SystemCenter.NTService"]/DisplayName$&lt;/Name&gt;&lt;Value&gt;$Data/Property[@Name='DisplayName']$&lt;/Value&gt;&lt;/Setting&gt;&lt;Setting&gt;&lt;Name&gt;$MPElement[Name="MSNL!Microsoft.SystemCenter.NTService"]/Description$&lt;/Name&gt;&lt;Value&gt;$Data/Property[@Name='Description']$&lt;/Value&gt;&lt;/Setting&gt;&lt;Setting&gt;&lt;Name&gt;$MPElement[Name="System!System.Entity"]/DisplayName$&lt;/Name&gt;&lt;Value&gt;$Data/Property[@Name='DisplayName']$&lt;/Value&gt;&lt;/Setting&gt;&lt;/Settings&gt;&lt;/InstanceSettings&gt;</DataSourceConfig>
+        <DataSourceType>Windows!Microsoft.Windows.Win32ServiceInformationProviderWithClassSnapshotDataMapper</DataSourceType>
+        <Target>Windows!Microsoft.Windows.Server.Computer</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses>
+          <DiscoveryClassItem>
+            <TypeId>Community.VMware.Class.vCenterServerService</TypeId>
+            <Properties />
+          </DiscoveryClassItem>
+        </DiscoveryClasses>
+        <DiscoveryRelationships />
+      </DiscoveryConfig>
+    </Instance>
+  </Instances>
+</TemplateGroup>

@@ -1,0 +1,34 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Presentation>
+    <ImageReferences>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.vCenter" ImageID="Community.VMware.Image.vCenter.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.vCenter" ImageID="Community.VMware.Image.vCenter.Small"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.Datacenter" ImageID="Community.VMware.Image.Datacenter.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.Datacenter" ImageID="Community.VMware.Image.Datacenter.Small"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.AllClusters" ImageID="Community.VMware.Image.Cluster.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.AllClusters" ImageID="Community.VMware.Image.Cluster.Small"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.Cluster" ImageID="Community.VMware.Image.Cluster.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.Cluster" ImageID="Community.VMware.Image.Cluster.Small"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.AllStandaloneHosts" ImageID="Community.VMware.Image.Host.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.AllStandaloneHosts" ImageID="Community.VMware.Image.Host.Small"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHost" ImageID="Community.VMware.Image.Host.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHost" ImageID="Community.VMware.Image.Host.Small"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.ClusterVirtualMachines" ImageID="Community.VMware.Image.VirtualMachine.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.ClusterVirtualMachines" ImageID="Community.VMware.Image.VirtualMachine.Small"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHostVirtualMachines" ImageID="Community.VMware.Image.VirtualMachine.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHostVirtualMachines" ImageID="Community.VMware.Image.VirtualMachine.Small"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.ClusterDatastores" ImageID="Community.VMware.Image.Datastore.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.ClusterDatastores" ImageID="Community.VMware.Image.Datastore.Small"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHostDatastores" ImageID="Community.VMware.Image.Datastore.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHostDatastores" ImageID="Community.VMware.Image.Datastore.Small"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.ClusterNetworks" ImageID="Community.VMware.Image.Network.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.ClusterNetworks" ImageID="Community.VMware.Image.Network.Small"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHostNetworks" ImageID="Community.VMware.Image.Network.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHostNetworks" ImageID="Community.VMware.Image.Network.Small"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.ClustervApps" ImageID="Community.VMware.Image.vApp.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.ClustervApps" ImageID="Community.VMware.Image.vApp.Small"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHostvApps" ImageID="Community.VMware.Image.vApp.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Rollup.HostsAndClusters.StandaloneHostvApps" ImageID="Community.VMware.Image.vApp.Small"/>
+    </ImageReferences>
+  </Presentation>
+</ManagementPackFragment>

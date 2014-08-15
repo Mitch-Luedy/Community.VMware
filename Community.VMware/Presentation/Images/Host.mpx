@@ -1,0 +1,16 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Categories>
+    <Category ID="Community.VMware.Image.Host.Diagram.Category" Target="Community.VMware.Image.Host.Diagram" Value="System!System.Internal.ManagementPack.Images.DiagramIcon" />
+    <Category ID="Community.VMware.Image.Host.Small.Category" Target="Community.VMware.Image.Host.Small" Value="System!System.Internal.ManagementPack.Images.u16x16Icon" />
+  </Categories>
+  <Presentation>
+    <ImageReferences>
+      <ImageReference ElementID="Community.VMware.Class.Host" ImageID="Community.VMware.Image.Host.Diagram"/>
+      <ImageReference ElementID="Community.VMware.Class.Host" ImageID="Community.VMware.Image.Host.Small"/>
+    </ImageReferences>
+  </Presentation>
+  <Resources>
+    <Image ID="Community.VMware.Image.Host.Diagram" FileName="Host_80.png" Accessibility="Public" HasNullStream="false" Comment="Community - VMware Host Image Diagram" />
+    <Image ID="Community.VMware.Image.Host.Small" FileName="Host_16.png" Accessibility="Public" HasNullStream="false" Comment="Community - VMware Host Image Small" />
+  </Resources>
+</ManagementPackFragment>

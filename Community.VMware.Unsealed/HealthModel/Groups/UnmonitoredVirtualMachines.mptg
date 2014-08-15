@@ -1,0 +1,48 @@
+<TemplateGroup>
+  <Instances>
+    <Instance ID="Instance610defd058da42ff8bd5bbf445481048" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>Discovery.Group.UnmonitoredVirtualMachines</Id>
+        <DisplayName>Community - VMware Unmonitored Virtual Machines Group Discovery</DisplayName>
+        <Description />
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;RuleId&gt;$MPElement$&lt;/RuleId&gt;&lt;GroupInstanceId&gt;$Target/Id$&lt;/GroupInstanceId&gt;&lt;MembershipRules&gt;&lt;MembershipRule&gt;&lt;MonitoringClass&gt;$MPElement[Name="VMware!Community.VMware.Class.VirtualMachine"]$&lt;/MonitoringClass&gt;&lt;RelationshipClass&gt;$MPElement[Name="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities"]$&lt;/RelationshipClass&gt;&lt;Expression&gt;&lt;RegExExpression&gt;&lt;ValueExpression&gt;&lt;Property&gt;$MPElement[Name="VMware!Community.VMware.Class.VirtualMachine"]/VirtualMachineId$&lt;/Property&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;MatchesRegularExpression&lt;/Operator&gt;&lt;Pattern&gt;(DoNotRemoveThisString)&lt;/Pattern&gt;&lt;/RegExExpression&gt;&lt;/Expression&gt;&lt;/MembershipRule&gt;&lt;/MembershipRules&gt;</DataSourceConfig>
+        <DataSourceType>SC!Microsoft.SystemCenter.GroupPopulator</DataSourceType>
+        <Target>VMware!Community.VMware.Class.Group.UnmonitoredVirtualMachines</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses />
+        <DiscoveryRelationships>
+          <DiscoveryRelationshipItem>
+            <TypeId>MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities</TypeId>
+            <Properties />
+          </DiscoveryRelationshipItem>
+        </DiscoveryRelationships>
+      </DiscoveryConfig>
+    </Instance>
+    <Instance ID="Instancefa4a0bfca5374bf9b407ccb1c472d935" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PowerShellTask" Version="1.0.0.0">
+      <PowerShellTaskConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Script>Scripts\AddVirtualMachineToUnmonitoredGroup.ps1</Script>
+        <ScriptParameters>
+          <PowerShellParameter>
+            <Name>VirtualMachineId</Name>
+            <Value>$Target/Property[Type="VMware!Community.VMware.Class.VirtualMachine"]/VirtualMachineId$</Value>
+          </PowerShellParameter>
+        </ScriptParameters>
+        <ScriptSnapins />
+        <ScriptTimeout>300</ScriptTimeout>
+        <Accessibility>Internal</Accessibility>
+        <Id>Task.AddVirtualMachineToUnmonitoredGroup</Id>
+        <DisplayName>Stop Monitoring this Virtual Machine</DisplayName>
+        <Description>Adds the selected Virtual Machine to the Community - VMware Unmonitored Virtual Machines Group Discovery configuration</Description>
+        <Target>VMware!Community.VMware.Class.VirtualMachine</Target>
+        <Enabled>true</Enabled>
+        <Category>Operations</Category>
+        <Remotable>true</Remotable>
+      </PowerShellTaskConfig>
+    </Instance>
+  </Instances>
+</TemplateGroup>

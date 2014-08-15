@@ -1,0 +1,19 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Presentation>
+    <Folders>
+      <Folder ID="Community.VMware.Unsealed.Folder.CustomViews" Accessibility="Public" ParentFolder="VMware!Community.VMware.Folder.Root" />
+    </Folders>
+    <FolderItems>
+    </FolderItems>
+  </Presentation>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Community.VMware.Unsealed.Folder.CustomViews">
+          <Name>2. Custom Views</Name>
+          <Description>Community VMware Custom Views Folder</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>
