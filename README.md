@@ -108,3 +108,12 @@ The views contained in this management pack are included in the **VMware** view 
 * **3. vCenter Object States** - Presents each vCenter Server and their hosted vCenter object states. Click on each column to see the state of each objects
 * **1. Inventory Objects** - Folder that includes state views for the discovered vCenter inventory objects.
 * **2. Custom Views** - Folder for adding custom views
+
+## Known Issues ##
+
+* **Event 300 PowerShell Warning Exception** - Provider Health: Attempting to perform the NewDrive operation on the 'VimInventory' provider failed for the drive with root '\'. The specified mount name 'vis' is already in use.. 
+
+	Multiple monitoring scripts running to collect and monitor using the VMware PowerCLI providers causes  this contention. This can lead to MonitoringHost.exe crashes and memory leakage. **The next release should address this issue.**
+
+
+
