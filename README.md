@@ -9,7 +9,11 @@ This project was created to provide a free VMware monitoring option to the Opera
 
 ## Getting Started ##
 
-### Basic Requirements ##
+### Warning ###
+
+There is a bug that will cause MonitoringHost.exe to crash on the Management Server that manages the VMware discovered objects. Have a plan to mitigate this bug if you plan on testing this MP out.
+
+### Basic Requirements ###
 
 * Operations Manager 2012
 * VMware vCenter Server
@@ -113,7 +117,7 @@ The views contained in this management pack are included in the **VMware** view 
 
 * **Event 300 PowerShell Warning Exception** - Provider Health: Attempting to perform the NewDrive operation on the 'VimInventory' provider failed for the drive with root '\'. The specified mount name 'vis' is already in use.. 
 
-	Multiple monitoring scripts running to collect and monitor using the VMware PowerCLI providers causes  this contention. This can lead to MonitoringHost.exe crashes and memory leakage. **The next release should address this issue.**
+	Multiple monitoring scripts running to collect and monitor using the VMware PowerCLI providers causes this contention. This can lead to MonitoringHost.exe crashes and memory leakage. **I don't have the time to address this issue**
 
 
 
