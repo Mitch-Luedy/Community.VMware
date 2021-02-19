@@ -1,5 +1,10 @@
 ﻿param($sourceId,$managedEntityId)
 
+if (Test-path C:\vCenter\Server.txt){
+    $Server=(Get-content C:\vCenter\Server.txt).Trim()
+    $vCenterServerName=$Server
+}
+ 
 Function LogScriptEvent {
 	Param (
 		

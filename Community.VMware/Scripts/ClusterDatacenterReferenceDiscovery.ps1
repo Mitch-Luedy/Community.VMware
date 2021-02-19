@@ -1,11 +1,15 @@
 ﻿param($sourceId,$managedEntityId,$vCenterServerName)
-
+if (Test-path C:\vCenter\Server.txt){
+    $Server=(Get-content C:\vCenter\Server.txt).Trim()
+    $vCenterServerName=$Server;
+}
 Function ExitPrematurely ($Message) {
 	$discoveryData.IsSnapshot = $false
 	$api.LogScriptEvent($ScriptName,1985,2,$Message)
 	$discoveryData
 	exit
 }
+
 
 Function LogScriptEvent {
 	Param (
@@ -64,11 +68,11 @@ If (!$VMclusterObjs){
 }
 
 Try {
-	Add-PSSnapin VMware.VimAutomation.Core
+	Import-Module VMware.VimAutomation.Core
 } Catch {
 	Start-Sleep -Seconds 10
 	Try {
-		Add-PSSnapin VMware.VimAutomation.Core
+		Import-Module VMware.VimAutomation.Core
 	} Catch {
 		DefaultErrorLogging
 		Exit
