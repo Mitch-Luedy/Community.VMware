@@ -40,6 +40,7 @@ For appliance, You will need:
 2. in that folder create a "Server.txt" file with only the vCenter ServerName or IP Address. No spaces and no carrige returns. Currently this only supports 1 machine but I have plans to update this.
 3. To add a "Dummy service" to the machine that is acting as proxy. It will be pointed to a file that does not exist and is Disabled. That is fine. Run the following powershell line to create the service:
 
+### 
 	New-Service -Name "vpxd" -DisplayName "vCenter Proxy Dummy Service" -StartupType Disabled  -BinaryPathName "C:\vCenter\dummy.txt" -Description "This service acts as a Dummy service that never needs to run, but SCOM uses to discover this as a vCenter server."
 	
 
