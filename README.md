@@ -5,20 +5,19 @@ Community developed Operations Manager monitoring for VMware
 
 ### Description ###
 
-This project was created to provide a free VMware monitoring option to the Operations Manager community. The workflows in this Management Pack utilize PowerShell and VMware vSphere PowerCLI to connect to vCenter to perform monitoring.
+This project was created to provide a free VMware monitoring option to the Operations Manager community. The workflows in this Management Pack utilize PowerShell and VMware vSphere PowerCLI to connect to vCenter to perform monitoring. The problem I ran into with the original is that it did not work for vCenter Appliance, this one will if configured properly.
 
 ## Getting Started ##
 
-### Warning ###
 
-There is a bug that will cause MonitoringHost.exe to crash on the Management Server that manages the VMware discovered objects. Have a plan to mitigate this bug if you plan on testing this MP out.
 
 ### Basic Requirements ###
 
 * Operations Manager 2012
 * VMware vCenter Server
 * VMware vSphere PowerCLI (Installed on Management Servers)
-
+* If using this on an appliance, you will need a Windows machine to act as Proxy. PowerCLI will need to be installed on it. There is a limit currently of 1 vCenter per Proxy Windows Machine.
+* 
 ### Setup ###
 
 1. Install the Operations Manager agent on each VMware vCenter server
@@ -34,6 +33,19 @@ There is a bug that will cause MonitoringHost.exe to crash on the Management Ser
 	* Community.VMware.mpb
 	* Community.VMware.Unsealed.xml
 1. (optional) Configure the members of the **Community - VMware Monitoring Resource Pool**
+
+### FOR Appliances ###
+For appliance, You will need:
+1. Create a folder on the Windows Based "Proxy" computer "C:\vCenter\"
+2. in that folder create a "Server.txt" file with only the vCenter ServerName or IP Address. No spaces and no carrige returns. Currently this only supports 1 machine but I have plans to update this.
+3. To add a "Dummy service" to the machine that is acting as proxy. It will be pointed to a file that does not exist and is Disabled. That is fine. Run the following powershell line to create the service:
+#### Start PowerShell Command ####
+	New-Service -Name "vpxd" -DisplayName "vCenter Proxy Dummy Service" -StartupType Disabled  -BinaryPathName "C:\vCenter\dummy.txt" -Description "This service acts as a Dummy service that never needs to run, but SCOM uses to discover this as a vCenter server."
+#### End PowerShell Command ####	
+
+4. when this "Proxy" server is discovered as a vCenter Server, it will show as unhealthy, you can create an override in OpsMan for the vCenter health state on it so it will show as unmonitored. The actual vCenter server will be discovered and show up after a while.
+	
+Everything else should work the same as the regular VMWare Community Managemenr pack by Mitch-Luedy
 
 ## Monitoring ##
 
