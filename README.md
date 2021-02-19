@@ -37,7 +37,7 @@ This project was created to provide a free VMware monitoring option to the Opera
 ### FOR Appliances ###
 For appliance, You will need:
 1. Create a folder on the Windows Based "Proxy" computer "C:\vCenter\"
-2. in that folder create a "Server.txt" file with only the vCenter ServerName or IP Address. No spaces and no carrige returns. Currently this only supports 1 machine but I have plans to update this.
+2. in that folder create a "Server.txt" file with only the vCenter ServerName or IP Address. No spaces and no carrige returns. Currently this only supports 1 vCenter Appliance per Proxy machine but I hope to get arround to removing this limitation. The "Proxy" computer runs the Powershell scripts against the vCenter Server in the Server.txt file.
 3. To add a "Dummy service" to the machine that is acting as proxy. It will be pointed to a file that does not exist and is Disabled. That is fine. Run the following powershell line to create the service:
 
 ### 
