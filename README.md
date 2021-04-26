@@ -38,6 +38,7 @@ This project was created to provide a free VMware monitoring option to the Opera
 For appliance, You will need:
 1. Create a folder on the Windows Based "Proxy" computer "C:\vCenter\"
 2. in that folder create a "vCenter.ini" in the following format:
+
 ###
 ;========Start ini file=================
 ;Logging settings
