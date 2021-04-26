@@ -22,7 +22,7 @@ This project was created to provide a free VMware monitoring option to the Opera
 
 1. Install the Operations Manager agent on each VMware vCenter server
 1. Download [VMware vSphere PowerCLI](https://www.vmware.com/support/developer/PowerCLI/)
-1. Install vSphere PowerCLI on each Management Server
+1. Install vSphere PowerCLI on the Management Server that will run this
 1. Grant vCenter Read-only access for SCOM
 	* Management Server **Default Action Account**  accounts.
 	* OR use a new service account and configure it with the following:
@@ -37,7 +37,25 @@ This project was created to provide a free VMware monitoring option to the Opera
 ### FOR Appliances ###
 For appliance, You will need:
 1. Create a folder on the Windows Based "Proxy" computer "C:\vCenter\"
-2. in that folder create a "Server.txt" file with only the vCenter ServerName or IP Address. No spaces and no carrige returns. Currently this only supports 1 vCenter Appliance per Proxy machine but I hope to get arround to removing this limitation. The "Proxy" computer runs the Powershell scripts against the vCenter Server in the Server.txt file.
+2. in that folder create a "vCenter.ini" in the following format:
+
+;========Start ini file=================
+;Logging settings
+[Logging]
+
+;EnhanceLogging Valid options are yes,no,true,false
+EnhancedLogging=false
+
+;Enhanced Logging Path is the pather to the location where you want to save the Log files
+;Log file paths need to have a double "\\" so "C:\VMware\Logs" would be "C:\\VMware\\logs" 
+EnhancedLoggingPath=C:\\VMwareLogs
+
+
+[vCenterServers]
+;Comma seperated list of vcenter servers
+vCenterServerNames=vCenter01.Domain.com,vCenter02.domain.com
+;=========END INI file===================
+
 3. To add a "Dummy service" to the machine that is acting as proxy. It will be pointed to a file that does not exist and is Disabled. That is fine. Run the following powershell line to create the service:
 
 ### 
@@ -127,10 +145,21 @@ The views contained in this management pack are included in the **VMware** view 
 * **2. Custom Views** - Folder for adding custom views
 
 ## Known Issues ##
-
 * **Event 300 PowerShell Warning Exception** - Provider Health: Attempting to perform the NewDrive operation on the 'VimInventory' provider failed for the drive with root '\'. The specified mount name 'vis' is already in use.. 
 
-	Multiple monitoring scripts running to collect and monitor using the VMware PowerCLI providers causes this contention. This can lead to MonitoringHost.exe crashes and memory leakage. **I don't have the time to address this issue**
+Multiple monitoring scripts running to collect and monitor using the VMware PowerCLI providers causes this contention. This can lead to MonitoringHost.exe crashes and memory leakage. **I don't have the time to address this issue**
+
+My work around is having a powershell script run with full elevation as the System accountvia Task Scheduler every hour that checks the "MonitoringHost" process being run by the service account. This checks for the process using more than 4GB of memory or excess of 80% CPU usage and kills the process when found. here is an example of the powershell script (Customize as you see fit):
+
+$Processes=Get-Process -Name MonitoringHost -IncludeUserName | Where-Object {$_.UserName -eq "DOMAIN\vCenterServiceAccount"}
+ForEach ($Process in $Processes){
+	if (Process.PrivateMemorySize -gt 4292967296){
+		Stop-Process -Id $Process.Id -Force
+	}
+	if ($Process.CPU -gt 80){
+		Stop-Process -Id $Process.Id -Force
+	}
+}
 
 
 
