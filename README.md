@@ -38,7 +38,7 @@ This project was created to provide a free VMware monitoring option to the Opera
 For appliance, You will need:
 1. Create a folder on the Windows Based "Proxy" computer "C:\vCenter\"
 2. in that folder create a "vCenter.ini" in the following format:
-
+###
 ;========Start ini file=================
 ;Logging settings
 [Logging]
@@ -151,6 +151,7 @@ Multiple monitoring scripts running to collect and monitor using the VMware Powe
 
 My work around is having a powershell script run with full elevation as the System accountvia Task Scheduler every hour that checks the "MonitoringHost" process being run by the service account. This checks for the process using more than 4GB of memory or excess of 80% CPU usage and kills the process when found. here is an example of the powershell script (Customize as you see fit):
 
+###
 $Processes=Get-Process -Name MonitoringHost -IncludeUserName | Where-Object {$_.UserName -eq "DOMAIN\vCenterServiceAccount"}
 ForEach ($Process in $Processes){
 	if (Process.PrivateMemorySize -gt 4292967296){
