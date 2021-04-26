@@ -19,6 +19,7 @@
           <OverrideableParameter ID="SyncTime" Selector="$Config/SyncTime$" ParameterType="string" />
           <OverrideableParameter ID="TimeoutSeconds" Selector="$Config/TimeoutSeconds$" ParameterType="int" />
           <OverrideableParameter ID="WarningThreshold" Selector="$Config/WarningThreshold$" ParameterType="double" />
+          <OverrideableParameter ID="vCenterServerName" Selector="$Config/vCenterServerName$" ParameterType="string" />
         </OverrideableParameters>
         <MonitorImplementation>
           <MemberModules>

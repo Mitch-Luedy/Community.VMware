@@ -54,12 +54,12 @@
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.Visualization.Library">
       <Alias>Visualization</Alias>
-      <PackageToBundle>false</PackageToBundle>
+      <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="System.Virtualization.Library">
-      <HintPath>C:\Program Files\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\System.Virtualization.Library.mp</HintPath>
+      <HintPath>C:\Users\jusmb\OneDrive - ithierarchynet\VisualStudio\System.Virtualization.Library.mp</HintPath>
       <Alias>SVL</Alias>
-      <MinVersion>7.0.8427.0</MinVersion>
+      <MinVersion>7.0.8443.6</MinVersion>
     </ManagementPackReference>
   </ItemGroup>
   <ItemGroup>

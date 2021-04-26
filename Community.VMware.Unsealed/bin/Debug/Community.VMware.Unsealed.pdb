@@ -1,0 +1,7 @@
+HealthModel\Groups\UnmonitoredVirtualMachines.mptg.mpx*Community.VMware.Unsealed.Discovery.Group.UnmonitoredVirtualMachines*6*8*Discovery
+HealthModel\Groups\UnmonitoredVirtualMachines.mptg.mpx*Community.VMware.Unsealed.Task.AddVirtualMachineToUnmonitoredGroup*33*8*Task
+Presentation\Folders.mpx*Community.VMware.Unsealed.Folder.CustomViews*4*8*Folder
+HealthModel\Groups\UnmonitoredVirtualMachines.mptg.mpx*Community.VMware.Unsealed.Discovery.Group.UnmonitoredVirtualMachines*54*10*DisplayString
+HealthModel\Groups\UnmonitoredVirtualMachines.mptg.mpx*Community.VMware.Unsealed.Task.AddVirtualMachineToUnmonitoredGroup*58*10*DisplayString
+Presentation\Folders.mpx*Community.VMware.Unsealed.Folder.CustomViews*12*10*DisplayString
+Presentation\ManagementPack.mpx*Community.VMware.Unsealed*5*10*DisplayString
