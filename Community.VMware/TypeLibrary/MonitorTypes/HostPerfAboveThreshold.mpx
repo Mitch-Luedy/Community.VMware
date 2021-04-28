@@ -27,6 +27,7 @@
           <OverrideableParameter ID="WarningThreshold" Selector="$Config/WarningThreshold$" ParameterType="int" />
           <OverrideableParameter ID="CriticalThreshold" Selector="$Config/CriticalThreshold$" ParameterType="int" />
           <OverrideableParameter ID="NumSamples" Selector="$Config/NumSamples$" ParameterType="int" />
+          <OverrideableParameter ID="vCenterServerName" Selector="$Config/vCenterServerName$" ParameterType="string" />
         </OverrideableParameters>
         <MonitorImplementation>
           <MemberModules>

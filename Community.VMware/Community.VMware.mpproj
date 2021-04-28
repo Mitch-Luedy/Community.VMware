@@ -18,7 +18,7 @@
     <Company>Community</Company>
     <Copyright>Community</Copyright>
     <DelaySigning>False</DelaySigning>
-    <AssemblyOriginatorKeyFile>KeyFile\Community.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>C:\Temp\JB.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>false</DebugSymbols>
@@ -526,68 +526,68 @@
   </ItemGroup>
   <ItemGroup>
     <ManagementPackReference Include="Microsoft.SystemCenter.DataWarehouse.Library">
-      <HintPath>C:\Program Files\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\Microsoft.SystemCenter.DataWarehouse.Library.mp</HintPath>
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2019\Microsoft.SystemCenter.DataWarehouse.Library.mp</HintPath>
       <Alias>MSDL</Alias>
-      <MinVersion>7.0.8427.0</MinVersion>
+      <MinVersion>10.19.10050.0</MinVersion>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.InstanceGroup.Library">
-      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\Microsoft.SystemCenter.InstanceGroup.Library.mp</HintPath>
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2019\Microsoft.SystemCenter.InstanceGroup.Library.mp</HintPath>
       <Alias>MSIL</Alias>
       <MinVersion>7.5.8501.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.Library">
-      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\Microsoft.SystemCenter.Library.mp</HintPath>
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2019\Microsoft.SystemCenter.Library.mp</HintPath>
       <Alias>SC</Alias>
-      <MinVersion>7.0.8427.0</MinVersion>
-      <PackageToBundle>False</PackageToBundle>
+      <MinVersion>7.0.8443.6</MinVersion>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.NTService.Library">
-      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\Microsoft.SystemCenter.NTService.Library.mp</HintPath>
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2019\Microsoft.SystemCenter.NTService.Library.mp</HintPath>
       <Alias>MSNL</Alias>
-      <MinVersion>7.0.8560.0</MinVersion>
+      <MinVersion>10.19.10050.0</MinVersion>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.Visualization.Library">
-      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\Microsoft.SystemCenter.Visualization.Library.mp</HintPath>
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2019\Microsoft.SystemCenter.Visualization.Library.mp</HintPath>
       <Alias>Visualization</Alias>
-      <MinVersion>7.0.8560.0</MinVersion>
+      <MinVersion>10.19.10050.0</MinVersion>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.Unix.Library">
-      <HintPath>C:\Users\mluedy2\Desktop\community-vmware\Community.VMware\References\Microsoft.Unix.Library.mp</HintPath>
+      <HintPath>C:\Users\jusmb\OneDrive - Microsoft\DoD\USMC\Quan\EEVE\MP\Microsoft.Unix.Library.mp</HintPath>
       <Alias>Unix</Alias>
-      <MinVersion>7.4.3507.0</MinVersion>
+      <MinVersion>10.19.1123.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.Windows.Library">
-      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\Microsoft.Windows.Library.mp</HintPath>
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2019\Microsoft.Windows.Library.mp</HintPath>
       <Alias>Windows</Alias>
       <MinVersion>7.5.8501.0</MinVersion>
     </ManagementPackReference>
     <ManagementPackReference Include="System.Hardware.Library">
-      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\System.Hardware.Library.mp</HintPath>
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2019\System.Hardware.Library.mp</HintPath>
       <Alias>SHL</Alias>
-      <MinVersion>7.0.8427.0</MinVersion>
+      <MinVersion>7.0.8443.6</MinVersion>
     </ManagementPackReference>
     <ManagementPackReference Include="System.Health.Library">
-      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\System.Health.Library.mp</HintPath>
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2019\System.Health.Library.mp</HintPath>
       <Alias>Health</Alias>
-      <MinVersion>7.0.8427.0</MinVersion>
+      <MinVersion>7.0.8443.6</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="System.Library">
-      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\System.Library.mp</HintPath>
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2019\System.Library.mp</HintPath>
       <Alias>System</Alias>
       <MinVersion>7.5.8501.0</MinVersion>
     </ManagementPackReference>
     <ManagementPackReference Include="System.Performance.Library">
-      <HintPath>C:\Program Files\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\System.Performance.Library.mp</HintPath>
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2019\System.Performance.Library.mp</HintPath>
       <Alias>Perf</Alias>
-      <MinVersion>7.0.8427.0</MinVersion>
+      <MinVersion>7.0.8443.6</MinVersion>
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="System.Virtualization.Library">
-      <HintPath>C:\Program Files (x86)\System Center 2012 Visual Studio Authoring Extensions\References\OM2012\System.Virtualization.Library.mp</HintPath>
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2019\System.Virtualization.Library.mp</HintPath>
       <Alias>SVL</Alias>
-      <MinVersion>7.0.8427.0</MinVersion>
+      <MinVersion>7.0.8443.6</MinVersion>
     </ManagementPackReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VSAC\Microsoft.SystemCenter.OperationsManager.targets" />
